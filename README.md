@@ -1,55 +1,38 @@
 # Twitch Leecher
 
-If you are looking for an extremely fast and easy to use Twitch VOD downloader, this is your tool!
-
+Twitch 다시보기 영상을 가장 쉽게 다운로드 받을 수 있는 방법은 바로 트위치 리처를 이용하는 겁니다!
 ![Twitch Leecher Screenshot](http://www.fakesmilerevolution.com/files/fsr/twitchleecher/tl14.jpg)
 
-## Is this project alive?????
+## 프로젝트 살아있는 건가요?
 
-Yes! Just because there are no commits for a longer period of time, does not mean the project is dead. I am a human being with a life and TL never was an still is not my top priority. I will always try to keep it running if there are breaking changes, but new features can take time. If I dicide to discontinue TL (which is very unlikely) you WILL be informed very clearly.
+네! 오랜 시간 동안 업데이트가 없다고 해서 죽은 프로젝트가 아닙니다! 프로그램 개발자도 사람이야 사람!
 
-## Download & Requirements
+## 다운로드 및 요구사항
 
-Twitch Leecher requires .NET Framework 4.5 or higher in order to run!
+트위치 리쳐는 .NET 프레임워크 4.5 버전 이상에서 동작합니다!
 
-32 & 64 Bit Installers are available [HERE](https://github.com/Franiac/TwitchLeecher/releases)
+[여기서 다운로드](https://github.com/syudal/TwitchLeecher/releases)
 
-Once installed, future releases will automatically update current installations with a single click!
+## 다른 다시보기 영상 다운로더와의 차이점이라면요....?
 
-## What is the difference compared to other VOD downloaders?
+병렬 다운로드를 구현하여 FFMPEG를 이용한 기존의 다운로더들 보다 100배 빠릅니다!
 
-Nearly all of the well known VOD downloaders execute the download process via FFMPEG's integrated download capabilities. However, this is extremely slow. The download speed rarely exceeds 1.5Mbit even if the internet connection is 100 times faster. Twitch Leecher does not use FFMPEG for download tasks at all. It downloads thousands of small video chunks in parallel while using all of the available bandwidth of your internet connection. As soon as all video chunks are downloaded, FFMPEG is only used to merge those chunks together in order to create a single video file again.
+## 기능
 
-## Features
+- 매우 사용하기 쉽습니다
+- 간지 나는 디자인
+- FFMPEG를 이용하여 다운로드 받는거 보다 20배 빠름
+- 프로그램 상에서 다시보기 즐겨찾기 가능
+- 채널을 URL이나 고유번호를 이용하여 다운로드 가능
+- 구독자 전용 다시보기 다운로드 가능
+- 다시보기의 구간 설정하여 다운로드 가능
+- 다중 다운로드 대기열 기능
+- 엄청난 검색기능
+- 다운로드 폴더 설정가능
+- 다운로드 탬플릿 설정가능
+- 믿음직한 프로그래머들
+- (가장중요) 무료
 
-- Very easy to use, no manual needed
-- Intuitive and stylish GUI
-- Up to 20 times faster download speed compared to direct download with FFMPEG
-- Browse your past broadcasts and highlights within the application
-- Search channels, VOD urls and VOD IDs
-- Subscriber-Only VOD download support
-- Time Selection for VOD downloads
-- Queue multiple downloads
-- Specify default search parameters
-- Specify default download folders
-- Specify a filename template with wildcards for your downloads
-- Developed by an experienced Software Engineer
-- Free and Open Source
-
-## Support & Issues
-
-**IMPORTANT:** Help me beeing efficient, please! I am developing Twitch Leecher in my free time for no money. Contribute to the project by posting complete, structured and helpful issues which I can reproduce quickly without asking for missing information. When creating a new issue please follow the below checklist:
-
-- Windows Insider Builds are NOT supported!
-- Take a look at the latest closed issues [HERE](https://github.com/Franiac/TwitchLeecher/issues?q=is%3Aissue+is%3Aclosed). Maybe your problem has already been resolved
-- Provide the version of Twitch Leecher you are using
-- Provide as much information about the VOD as possible (Url, Channel, ID)
-- Provide information about your operating system (e.g. Windows 10 64 Bit)
-- Try to describe the problem as detailed as possible, I cannot read your mind ;)
-- Is there any additional information about the issue that might be interesting for me? Write it down!
-- When you have a problem with a download, provide the download log created by Twitch Leecher (see screenshot below)
-
-![Twitch Leecher Log Screenshot](http://www.fakesmilerevolution.com/files/fsr/twitchleecher/tl14log.jpg)
-
-## LICENSE
+## 라이센스
 [MIT License](https://github.com/Franiac/TwitchLeecher/blob/master/LICENSE)
+역자 (https://syudal.blog.me/)
