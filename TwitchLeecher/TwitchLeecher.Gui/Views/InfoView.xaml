@@ -39,18 +39,18 @@
                 <TextBlock  Text="{Binding ProductName, Mode=OneTime, FallbackValue='Twitch Leecher X.Y'}" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" />
             </StackPanel>
 
-            <TextBlock Grid.Row="1" Text="Developer" FontWeight="Bold"  Margin="0,15,0,0" />
+            <TextBlock Grid.Row="1" Text="개발자" FontWeight="Bold"  Margin="0,15,0,0" />
             <TextBlock Grid.Row="2" Text="Dominik &quot;Franiac&quot; Rebitzer" Margin="15,5,0,0" />
 
-            <TextBlock Grid.Row="3" Text="Contact" FontWeight="Bold"  Margin="0,15,0,0" />
+            <TextBlock Grid.Row="3" Text="프로그램 번역" FontWeight="Bold"  Margin="0,15,0,0" />
             <TextBlock Grid.Row="4" Margin="15,5,0,0">
-            <Hyperlink Command="{Binding OpenLinkCommand}" CommandParameter="mailto:contact@franiac.com">
-                contact@franiac.com
+            <Hyperlink Command="{Binding OpenLinkCommand}" CommandParameter="https://syudal.blog.me/">
+                https://syudal.blog.me/
             </Hyperlink>
             </TextBlock>
 
-            <TextBlock Grid.Row="5" Text="Donate" FontWeight="Bold"  Margin="0,15,0,0" />
-            <TextBlock Grid.Row="6" Text="Help me out with a bottle of beer if you like the program :)" Margin="15,5,0,0" />
+            <TextBlock Grid.Row="5" Text="개발자 후원하기" FontWeight="Bold"  Margin="0,15,0,0" />
+            <TextBlock Grid.Row="6" Text="프로그램을 잘 사용하고 계신다면 맥주 한 잔 사주세요  :)" Margin="15,5,0,0" />
             <Button Grid.Row="7" Command="{Binding DonateCommand}" HorizontalAlignment="Left" Height="Auto" Margin="15,5,0,0" Cursor="Hand">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">

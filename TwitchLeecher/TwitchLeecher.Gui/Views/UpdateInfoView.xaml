@@ -29,14 +29,15 @@
                 <Border.BorderBrush>
                     <SolidColorBrush Color="{StaticResource Global.Theme.Color}" />
                 </Border.BorderBrush>
-                <TextBlock  Text="Update Available" FontSize="21" FontWeight="Bold" />
+                <TextBlock  Text="업데이트가 있습니다." FontSize="21" FontWeight="Bold" />
             </Border>
 
             <TextBlock Grid.Row="2">
                 <Run Text="Twitch Leecher" />
                 <Run Text="{Binding UpdateInfo.NewVersion, Mode=OneWay, FallbackValue='X.Y.Z'}" />
-                <Run Text="has been released on" />
+                <Run Text="가" />
                 <Run Text="{Binding UpdateInfo.ReleaseDate, Mode=OneWay, FallbackValue='04/21/2016', StringFormat=d}" />
+                <Run Text="에 업데이트 되었습니다." />
             </TextBlock>
 
             <TextBlock Grid.Row="4">

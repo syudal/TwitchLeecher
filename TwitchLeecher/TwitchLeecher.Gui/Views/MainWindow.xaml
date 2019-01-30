@@ -102,7 +102,7 @@
 
                 <StackPanel Grid.Column="1" Margin="0,6,0,0">
                     <TextBlock Style="{StaticResource TlTitleText}" Text="{Binding Title, FallbackValue='Twitch Leecher X.Y'}" />
-                    <TextBlock Style="{StaticResource SubTitleText}" Text="The Broadcast Downloader" Margin="10,0,0,0" />
+                    <TextBlock Style="{StaticResource SubTitleText}" Text="트위치 영상 다운로더" Margin="10,0,0,0" />
                 </StackPanel>
 
                 <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0" VerticalAlignment="Center">
@@ -110,7 +110,7 @@
                         <StackPanel Orientation="Horizontal">
                             <fa:ImageAwesome Icon="Search" Margin="0,4,0,2" Width="16" Height="16" RenderTransformOrigin="0.5,0.5" />
                             <TextBlock VerticalAlignment="Center" Margin="5,0,0,0" FontSize="14.667" RenderTransformOrigin="0.5,0.5">
-                                <Run Text="Search" /><Run Text="{Binding VideosCount, Mode=OneWay, StringFormat=' ({0})', FallbackValue=' (100)'}" />
+                                <Run Text="검색" /><Run Text="{Binding VideosCount, Mode=OneWay, StringFormat=' ({0})', FallbackValue=' (100)'}" />
                             </TextBlock>
                         </StackPanel>
                     </Button>
@@ -118,7 +118,7 @@
                         <StackPanel Orientation="Horizontal">
                             <fa:ImageAwesome Icon="Download" Margin="0,4,0,2" Width="16" Height="16" RenderTransformOrigin="0.5,0.5" />
                             <TextBlock VerticalAlignment="Center" Margin="5,0,0,0" FontSize="14.667" RenderTransformOrigin="0.5,0.5">
-                                <Run Text="Downloads" /><Run Text="{Binding DownloadsCount, Mode=OneWay, StringFormat=' ({0})', FallbackValue=' (100)'}" />
+                                <Run Text="다운로드" /><Run Text="{Binding DownloadsCount, Mode=OneWay, StringFormat=' ({0})', FallbackValue=' (100)'}" />
                             </TextBlock>
                         </StackPanel>
                     </Button>

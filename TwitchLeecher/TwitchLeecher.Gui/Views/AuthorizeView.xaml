@@ -24,10 +24,10 @@
             <Border.BorderBrush>
                 <SolidColorBrush Color="{StaticResource Global.Theme.Color}" />
             </Border.BorderBrush>
-            <TextBlock  Text="Authorize Twitch Account" FontSize="21.333" FontWeight="Bold" />
+            <TextBlock  Text="트위치 계정에 로그인 해주세요" FontSize="21.333" FontWeight="Bold" />
         </Border>
 
-        <TextBlock Grid.Row="1" Text="If you want to download sub-only VODs, you need to authorize your Twitch account. This is the only way Twitch Leecher can verify that you are subscribed to the channel you are trying to download from." />
+        <TextBlock Grid.Row="1" Text="다운로드 할 다시보기가 구독자 전용으로 되어있습니다. 다운받으시려면 트위치 리쳐를 트위치 계정과 연결해주세요!" />
 
         <Button Grid.Row="3" Style="{StaticResource TlImageButton}" Command="{Binding ConnectCommand}" Cursor="Hand">
             <Button.Template>

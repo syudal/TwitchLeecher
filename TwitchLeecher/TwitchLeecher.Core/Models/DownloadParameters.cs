@@ -213,7 +213,7 @@ namespace TwitchLeecher.Core.Models
             {
                 if (_quality == null)
                 {
-                    AddError(currentProperty, "Please select a quality!");
+                    AddError(currentProperty, "영상 품질을 선택해주세요!");
                 }
             }
 
@@ -223,7 +223,7 @@ namespace TwitchLeecher.Core.Models
             {
                 if (string.IsNullOrWhiteSpace(_folder))
                 {
-                    AddError(currentProperty, "Please specify a folder!");
+                    AddError(currentProperty, "폴더를 지정해주세요!");
                 }
             }
 
@@ -233,15 +233,15 @@ namespace TwitchLeecher.Core.Models
             {
                 if (string.IsNullOrWhiteSpace(_filename))
                 {
-                    AddError(currentProperty, "Please specify a filename!");
+                    AddError(currentProperty, "파일 이름을 지정해주세요!");
                 }
                 else if (!_filename.EndsWith(".mp4", StringComparison.OrdinalIgnoreCase))
                 {
-                    AddError(currentProperty, "Filename must end with '.mp4'!");
+                    AddError(currentProperty, "파일의 이름은 '.mp4'로 끝나야 합니다!");
                 }
                 else if (FileSystem.FilenameContainsInvalidChars(_filename))
                 {
-                    AddError(currentProperty, "Filename contains invalid characters!");
+                    AddError(currentProperty, "파일 이름에 잘못된 문자가 포함되어 있습니다!");
                 }
             }
 
@@ -255,11 +255,11 @@ namespace TwitchLeecher.Core.Models
 
                     if (_cropStartTime < TimeSpan.Zero || _cropStartTime > videoLength)
                     {
-                        AddError(currentProperty, "Please enter a value between '" + TimeSpan.Zero.ToString() + "' and '" + videoLength.ToDaylessString() + "'!");
+                        AddError(currentProperty, "'" + TimeSpan.Zero.ToString() + "' 와 '" + videoLength.ToDaylessString() + "'의 사이 값을 입력해주세요!");
                     }
                     else if (CroppedLength.TotalSeconds < 5)
                     {
-                        AddError(currentProperty, "The cropped video has to be at least 5s long!");
+                        AddError(currentProperty, "잘라낸 비디오는 5초 이상이어야 합니다.");
                     }
                 }
             }
@@ -274,15 +274,15 @@ namespace TwitchLeecher.Core.Models
 
                     if (_cropEndTime < TimeSpan.Zero || _cropEndTime > videoLength)
                     {
-                        AddError(currentProperty, "Please enter a value between '" + TimeSpan.Zero.ToString() + "' and '" + videoLength.ToDaylessString() + "'!");
+                        AddError(currentProperty, "'" + TimeSpan.Zero.ToString() + "' 와 '" + videoLength.ToDaylessString() + "'의 사이 값을 입력해주세요!");
                     }
                     else if (_cropStart && (_cropEndTime <= _cropStartTime))
                     {
-                        AddError(currentProperty, "End time has to be greater than start time!");
+                        AddError(currentProperty, "끝나는 시간이 시작 시간보다는 미래여야 합니다!");
                     }
                     else if (CroppedLength.TotalSeconds < 5)
                     {
-                        AddError(currentProperty, "The cropped video has to be at least 5s long!");
+                        AddError(currentProperty, "잘라낸 비디오는 5초 이상이어야 합니다.");
                     }
                 }
             }

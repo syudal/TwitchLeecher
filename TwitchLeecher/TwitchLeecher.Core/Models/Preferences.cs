@@ -271,15 +271,15 @@ namespace TwitchLeecher.Core.Models
                 {
                     if (string.IsNullOrWhiteSpace(_miscExternalPlayer))
                     {
-                        AddError(currentProperty, "Please specify an external player!");
+                        AddError(currentProperty, "외부 플레이어를 지정해주세요!");
                     }
                     else if (!_miscExternalPlayer.EndsWith(".exe", StringComparison.OrdinalIgnoreCase))
                     {
-                        AddError(currentProperty, "Filename must be an executable!");
+                        AddError(currentProperty, "파일 이름은 실행 파일이어야 합니다!");
                     }
                     else if (!File.Exists(_miscExternalPlayer))
                     {
-                        AddError(currentProperty, "The specified file does not exist!");
+                        AddError(currentProperty, "지정한 파일이 없습니다.!");
                     }
                 }
             }
@@ -290,7 +290,7 @@ namespace TwitchLeecher.Core.Models
             {
                 if (_searchOnStartup && string.IsNullOrWhiteSpace(_searchChannelName))
                 {
-                    AddError(currentProperty, "If 'Search on Startup' is enabled, you need to specify a default channel name!");
+                    AddError(currentProperty, "'시작 시 검색'이 활성화된 경우 기본 채널 이름을 지정해야 합니다!");
                 }
             }
 
@@ -300,7 +300,7 @@ namespace TwitchLeecher.Core.Models
             {
                 if (_searchLoadLimitType == LoadLimitType.Timespan && (_searchLoadLastDays < 1 || _searchLoadLastDays > 999))
                 {
-                    AddError(currentProperty, "Value has to be between 1 and 999!");
+                    AddError(currentProperty, "값은 1에서 999 사이여야 합니다!");
                 }
             }
 
@@ -310,7 +310,7 @@ namespace TwitchLeecher.Core.Models
             {
                 if (_searchLoadLimitType == LoadLimitType.LastVods && (_searchLoadLastVods < 1 || _searchLoadLastVods > 999))
                 {
-                    AddError(currentProperty, "Value has to be between 1 and 999!");
+                    AddError(currentProperty, "값은 1에서 999 사이여야 합니다!");
                 }
             }
 
@@ -320,7 +320,7 @@ namespace TwitchLeecher.Core.Models
             {
                 if (string.IsNullOrWhiteSpace(DownloadTempFolder))
                 {
-                    AddError(currentProperty, "Please specify a temporary download folder!");
+                    AddError(currentProperty, "임시 다운로드 폴더를 지정하세요!");
                 }
             }
 
@@ -330,7 +330,7 @@ namespace TwitchLeecher.Core.Models
             {
                 if (string.IsNullOrWhiteSpace(_downloadFolder))
                 {
-                    AddError(currentProperty, "Please specify a default download folder!");
+                    AddError(currentProperty, "기본 다운로드 폴더를 지정하세요!");
                 }
             }
 
@@ -340,15 +340,15 @@ namespace TwitchLeecher.Core.Models
             {
                 if (string.IsNullOrWhiteSpace(_downloadFileName))
                 {
-                    AddError(currentProperty, "Please specify a default download filename!");
+                    AddError(currentProperty, "기본 다운로드 파일 이름을 지정하세요!");
                 }
                 else if (!_downloadFileName.EndsWith(".mp4", StringComparison.OrdinalIgnoreCase))
                 {
-                    AddError(currentProperty, "Filename must end with '.mp4'!");
+                    AddError(currentProperty, "파일 이름의 끝은 '.mp4'로 끝나야 합니다!");
                 }
                 else if (FileSystem.FilenameContainsInvalidChars(_downloadFileName))
                 {
-                    AddError(currentProperty, "Filename contains invalid characters!");
+                    AddError(currentProperty, "파일 이름에 잘못된 문자가 포함되어 있습니다!");
                 }
             }            
         }

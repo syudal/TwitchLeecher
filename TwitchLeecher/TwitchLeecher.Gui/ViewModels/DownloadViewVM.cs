@@ -293,7 +293,7 @@ namespace TwitchLeecher.Gui.ViewModels
                     {
                         if (File.Exists(_downloadParams.FullPath))
                         {
-                            MessageBoxResult result = _dialogService.ShowMessageBox("The file already exists. Do you want to overwrite it?", "Download", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                            MessageBoxResult result = _dialogService.ShowMessageBox("파일이 이미 존재 합니다. 덮어쓰시겠습니까?", "다운로드", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
                             if (result != MessageBoxResult.Yes)
                             {
@@ -303,7 +303,7 @@ namespace TwitchLeecher.Gui.ViewModels
 
                         _twitchService.Enqueue(_downloadParams);
                         _navigationService.NavigateBack();
-                        _notificationService.ShowNotification("Download added");
+                        _notificationService.ShowNotification("다운로드에 추가됨");
                     }
                 }
             }
@@ -340,12 +340,12 @@ namespace TwitchLeecher.Gui.ViewModels
 
                 if (_twitchService.IsFileNameUsed(_downloadParams.FullPath))
                 {
-                    DownloadParams.AddError(nameof(DownloadParams.Filename), "Another video is already being downloaded to this file!");
+                    DownloadParams.AddError(nameof(DownloadParams.Filename), "파일을 사용중입니다!");
                 }
 
                 if (DownloadParams.HasErrors)
                 {
-                    AddError(currentProperty, "Invalid Download Parameters!");
+                    AddError(currentProperty, "잘못된 다운로드 매개 변수입니다!");
 
                     if (DownloadParams.GetErrors(nameof(DownloadParameters.CropStartTime)) is List<string> cropStartErrors && cropStartErrors.Count > 0)
                     {
@@ -375,8 +375,8 @@ namespace TwitchLeecher.Gui.ViewModels
                 menuCommands = new List<MenuCommand>();
             }
 
-            menuCommands.Add(new MenuCommand(DownloadCommand, "Download", "Download"));
-            menuCommands.Add(new MenuCommand(CancelCommand, "Cancel", "Times"));
+            menuCommands.Add(new MenuCommand(DownloadCommand, "다운로드", "Download"));
+            menuCommands.Add(new MenuCommand(CancelCommand, "취소", "Times"));
 
             return menuCommands;
         }

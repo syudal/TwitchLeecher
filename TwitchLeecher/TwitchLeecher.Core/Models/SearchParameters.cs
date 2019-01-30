@@ -183,7 +183,7 @@ namespace TwitchLeecher.Core.Models
             {
                 if (_searchType == SearchType.Channel && string.IsNullOrWhiteSpace(_channel))
                 {
-                    AddError(currentProperty, "Please specify a channel name!");
+                    AddError(currentProperty, "채널 이름을 입력해주세요!");
                 }
             }
 
@@ -195,7 +195,7 @@ namespace TwitchLeecher.Core.Models
                 {
                     if (!_loadFrom.HasValue)
                     {
-                        AddError(currentProperty, "Please specify a date!");
+                        AddError(currentProperty, "날짜를 입력해주세요!");
                     }
                     else
                     {
@@ -203,12 +203,12 @@ namespace TwitchLeecher.Core.Models
 
                         if (_loadFrom.Value.Date < minimum.Date)
                         {
-                            AddError(currentProperty, "Date has to be greater than '" + minimum.ToShortDateString() + "'!");
+                            AddError(currentProperty, "날짜는 '" + minimum.ToShortDateString() + "'보다 미래여야합니다!");
                         }
 
                         if (_loadFrom.Value.Date > DateTime.Now.Date)
                         {
-                            AddError(currentProperty, "Date cannot be greater than today!");
+                            AddError(currentProperty, "오늘보다 미래의 날짜로 지정할 수 없습니다!");
                         }
                     }
                 }
@@ -222,18 +222,18 @@ namespace TwitchLeecher.Core.Models
                 {
                     if (!_loadTo.HasValue)
                     {
-                        AddError(currentProperty, "Please specify a date!");
+                        AddError(currentProperty, "날짜를 입력해주세요!");
                     }
                     else
                     {
                         if (_loadTo.Value.Date > DateTime.Now.Date)
                         {
-                            AddError(currentProperty, "Date cannot be greater than today!");
+                            AddError(currentProperty, "오늘보다 미래의 날짜로 지정할 수 없습니다!");
                         }
 
                         if (_loadFrom.HasValue && _loadFrom.Value.Date > _loadTo.Value.Date)
                         {
-                            AddError(currentProperty, "Date has to be greater than '" + _loadFrom.Value.ToShortDateString() + "'!");
+                            AddError(currentProperty, "날짜는 '" + _loadFrom.Value.ToShortDateString() + "'보다 미래여야합니다!");
                         }
                     }
                 }
@@ -247,7 +247,7 @@ namespace TwitchLeecher.Core.Models
                 {
                     if (_loadLastVods < 1 || _loadLastVods > 999)
                     {
-                        AddError(currentProperty, "Value has to be between 1 and 999!");
+                        AddError(currentProperty, "값은 1에서 999 사이여야 합니다!");
                     }
                 }
             }
@@ -260,13 +260,13 @@ namespace TwitchLeecher.Core.Models
                 {
                     if (string.IsNullOrWhiteSpace(_urls))
                     {
-                        AddError(currentProperty, "Please specify one or more Twitch video urls!");
+                        AddError(currentProperty, "하나 이상의 트위치 비디오 URL을 입력해주세요.");
                     }
                     else
                     {
                         void AddUrlError()
                         {
-                            AddError(currentProperty, "One or more urls are invalid!");
+                            AddError(currentProperty, "잘못된 URL이 있습니다.");
                         }
 
                         string[] urls = _urls.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
@@ -334,7 +334,7 @@ namespace TwitchLeecher.Core.Models
                 {
                     if (string.IsNullOrWhiteSpace(_ids))
                     {
-                        AddError(currentProperty, "Please specify one or more Twitch video IDs!");
+                        AddError(currentProperty, "하나 이상의 Twitch 비디오 고유 번호를 입력해주세요!");
                     }
                     else
                     {
@@ -346,7 +346,7 @@ namespace TwitchLeecher.Core.Models
                             {
                                 if (!int.TryParse(id, out int idInt) || idInt <= 0)
                                 {
-                                    AddError(currentProperty, "One or more IDs are invalid!");
+                                    AddError(currentProperty, "잘못된 고유 번호가 있습니다.");
                                     break;
                                 }
                             }

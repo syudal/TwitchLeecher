@@ -14,7 +14,7 @@
     </UserControl.Resources>
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <fa:ImageAwesome Style="{StaticResource Img_Spinner}" Opacity="0.5" Width="150" />
-        <TextBlock Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.5">
+        <TextBlock Text="로딩..." HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.5">
             <TextBlock.Foreground>
                 <SolidColorBrush Color="{StaticResource Global.Theme.Color}" />
             </TextBlock.Foreground>

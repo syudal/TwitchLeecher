@@ -559,7 +559,7 @@ namespace TwitchLeecher.Gui.ViewModels
 
                 if (!_twitchService.CanShutdown())
                 {
-                    MessageBoxResult result = _dialogService.ShowMessageBox("Do you want to abort all running downloads and exit the application?", "Exit Application", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    MessageBoxResult result = _dialogService.ShowMessageBox("실행 중인 모든 다운로드를 중단하고 트위치 리쳐를 종료하시겠습니까?", "프로그램 종료", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
                     if (result == MessageBoxResult.No)
                     {

@@ -271,7 +271,7 @@ namespace TwitchLeecher.Gui.ViewModels
                 menuCommands = new List<MenuCommand>();
             }
 
-            menuCommands.Add(new MenuCommand(OpenDownloadFolderCommand, "Open Download Folder", "FolderOpen", 230));
+            menuCommands.Add(new MenuCommand(OpenDownloadFolderCommand, "다운로드 폴더 열기", "FolderOpen", 230));
 
             return menuCommands;
         }

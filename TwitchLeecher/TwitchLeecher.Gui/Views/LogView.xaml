@@ -24,7 +24,7 @@
                 <Border.BorderBrush>
                     <SolidColorBrush Color="{StaticResource Global.Theme.Color}" />
                 </Border.BorderBrush>
-                <TextBlock  Text="Download Log" FontSize="21.333" FontWeight="Bold" />
+                <TextBlock  Text="다운로드 기록" FontSize="21.333" FontWeight="Bold" />
             </Border>
 
             <Border Grid.Row="1" BorderThickness="1">

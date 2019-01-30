@@ -214,12 +214,12 @@ namespace TwitchLeecher.Gui.ViewModels
                     !string.IsNullOrWhiteSpace(SearchParams.Channel) &&
                     !_twitchService.ChannelExists(SearchParams.Channel))
                 {
-                    SearchParams.AddError(nameof(SearchParams.Channel), "The specified channel does not exist on Twitch!");
+                    SearchParams.AddError(nameof(SearchParams.Channel), "지정한 채널이 트위치에 없습니다!");
                 }
 
                 if (SearchParams.HasErrors)
                 {
-                    AddError(currentProperty, "Invalid Search Parameters!");
+                    AddError(currentProperty, "잘못된 검색 매개 변수 입니다!");
                 }
             }
         }
@@ -233,8 +233,8 @@ namespace TwitchLeecher.Gui.ViewModels
                 menuCommands = new List<MenuCommand>();
             }
 
-            menuCommands.Add(new MenuCommand(SearchCommand, "Search", "Search"));
-            menuCommands.Add(new MenuCommand(CancelCommand, "Cancel", "Times"));
+            menuCommands.Add(new MenuCommand(SearchCommand, "검색", "Search"));
+            menuCommands.Add(new MenuCommand(CancelCommand, "취소", "Times"));
 
             return menuCommands;
         }

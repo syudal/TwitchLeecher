@@ -58,16 +58,16 @@
                 </Border.BorderBrush>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Name="btnYes" Margin="0,0,3,0" Click="BtnYes_Click">
-                        <TextBlock Name="btnYesContent" Text="Yes" />
+                        <TextBlock Name="btnYesContent" Text="예" />
                     </Button>
                     <Button Name="btnNo" Margin="3,0,3,0" Click="BtnNo_Click">
-                        <TextBlock Name="btnNoContent" Text="No" />
+                        <TextBlock Name="btnNoContent" Text="아니오" />
                     </Button>
                     <Button Name="btnOk" Margin="3,0,3,0" Click="BtnOk_Click">
-                        <TextBlock Name="btnOkContent" Text="Ok" />
+                        <TextBlock Name="btnOkContent" Text="확인" />
                     </Button>
                     <Button Name="btnCancel" Margin="3,0,0,0" Click="BtnCancel_Click">
-                        <TextBlock Name="btnCancelContent" Text="Cancel" />
+                        <TextBlock Name="btnCancelContent" Text="취소" />
                     </Button>
                 </StackPanel>
             </Border>

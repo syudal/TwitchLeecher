@@ -20,7 +20,7 @@
 
                     <DataTemplate x:Key="emptyView">
                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="No active downloads!" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" />
+                            <TextBlock Text="활성된 다운로드 없음" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" />
                             <fa:ImageAwesome Icon="Download" Margin="0,20,0,20" Width="150" Height="150" Opacity="0.5">
                                 <fa:ImageAwesome.Foreground>
                                     <SolidColorBrush Color="{StaticResource Global.Theme.Color}" />

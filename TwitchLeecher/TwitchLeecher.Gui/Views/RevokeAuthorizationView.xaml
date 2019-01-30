@@ -25,15 +25,15 @@
             <Border.BorderBrush>
                 <SolidColorBrush Color="{StaticResource Global.Theme.Color}" />
             </Border.BorderBrush>
-            <TextBlock Text="Revoke Twitch Authorization" FontSize="21.333" FontWeight="Bold" />
+            <TextBlock Text="트위치 리쳐에서 트위치 계정 로그아웃 하기" FontSize="21.333" FontWeight="Bold" />
         </Border>
 
-        <TextBlock Grid.Row="1" Text="If you decide to revoke your Twitch account authorization, you will not be able to download sub-only VODs anymore!" />
+        <TextBlock Grid.Row="1" Text="트위치 계정을 로그아웃 하면 구독자 전용 비디오를 다운로드 받을 수 없습니다!" />
 
         <Button Grid.Row="3" Command="{Binding RevokeCommand}" FontWeight="Bold" Width="190" Margin="0,0,5,0" HorizontalAlignment="Left">
             <StackPanel Orientation="Horizontal">
                 <fa:ImageAwesome Icon="Ban" Margin="0,4,0,2" Width="16" Height="16" RenderTransformOrigin="0.5,0.5" />
-                <TextBlock Text="Revoke Authorization" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="14.667" RenderTransformOrigin="0.5,0.5" />
+                <TextBlock Text="그래도 로그아웃!" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="14.667" RenderTransformOrigin="0.5,0.5" />
             </StackPanel>
         </Button>
     </Grid>

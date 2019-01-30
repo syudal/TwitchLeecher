@@ -38,7 +38,7 @@
                 <Border.BorderBrush>
                     <SolidColorBrush Color="{StaticResource Global.Theme.Color}" />
                 </Border.BorderBrush>
-                <TextBlock  Text="Application" FontSize="21.333" FontWeight="Bold" />
+                <TextBlock  Text="프로그램" FontSize="21.333" FontWeight="Bold" />
             </Border>
 
             <Grid Grid.Row="1" Margin="15,0,0,0">
@@ -53,29 +53,28 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <CheckBox Grid.Row="0" Grid.Column="0" Content="Check for Updates" IsChecked="{Binding CurrentPreferences.AppCheckForUpdates}" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <CheckBox Grid.Row="0" Grid.Column="0" Content="업데이트 확인" IsChecked="{Binding CurrentPreferences.AppCheckForUpdates}" VerticalAlignment="Center" HorizontalAlignment="Left" />
                 <fa:ImageAwesome Grid.Row="0" Grid.Column="2" Style="{StaticResource Img_Help}">
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip Width="350">
                             <StackPanel>
-                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="Check for Updates" />
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="업데이트 확인" />
                                 <TextBlock TextAlignment="Justify">
-                                        You will automatically be informed if a new version
-                                        of Twitch Leecher is available for download.
+                                        트위치 리쳐의 새 버전이 있으면 자동으로 업데이트 합니다.
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>
                     </fa:ImageAwesome.ToolTip>
                 </fa:ImageAwesome>
 
-                <CheckBox Grid.Row="2" Grid.Column="0" Content="Show Donation Button" IsChecked="{Binding CurrentPreferences.AppShowDonationButton}" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <CheckBox Grid.Row="2" Grid.Column="0" Content="후원 버튼 보기" IsChecked="{Binding CurrentPreferences.AppShowDonationButton}" VerticalAlignment="Center" HorizontalAlignment="Left" />
                 <fa:ImageAwesome Grid.Row="2" Grid.Column="2" Style="{StaticResource Img_Help}">
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip Width="350">
                             <StackPanel>
-                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="Show Donation Button" />
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="후원 버튼 보기" />
                                 <TextBlock TextAlignment="Justify">
-                                        Show or hide the donation button ($) in the titlebar
+                                        상단의 후원버튼을 ($) 켜거나 끕니다.
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>
@@ -87,7 +86,7 @@
                 <Border.BorderBrush>
                     <SolidColorBrush Color="{StaticResource Global.Theme.Color}" />
                 </Border.BorderBrush>
-                <TextBlock  Text="Search" FontSize="21.333" FontWeight="Bold" />
+                <TextBlock  Text="검색" FontSize="21.333" FontWeight="Bold" />
             </Border>
 
             <Grid Grid.Row="3" Margin="15,0,0,0">
@@ -112,7 +111,7 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Favourite Channels" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="선호 채널 명" VerticalAlignment="Center" HorizontalAlignment="Right" />
                 <Grid Grid.Row="0" Grid.Column="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -135,45 +134,45 @@
                             <StackPanel>
                                 <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="Favourite Channels" />
                                 <TextBlock TextAlignment="Justify">
-                                        Specify a list of your favourite channels for the search dialog. The one selected here will be pre-selected in the search dialog. Use the +/- buttons in order to add/remove channels to/from the dropdown list.
+                                        특별히 선호하는 채널의 목록을 검색에 미리 추가하여 등록할 수 있습니다. 옆의 +/-버튼을 사용하여 리스트에 추가하거나 제거하세요!
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>
                     </fa:ImageAwesome.ToolTip>
                 </fa:ImageAwesome>
 
-                <TextBlock Grid.Row="2" Grid.Column="0"  Text="Video Type" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                <TextBlock Grid.Row="2" Grid.Column="0"  Text="영상 타입" VerticalAlignment="Center" HorizontalAlignment="Right" />
                 <StackPanel Grid.Row="2" Grid.Column="2"  Orientation="Horizontal">
-                    <RadioButton GroupName="VideoType" Content="Broadcast" IsChecked="{Binding CurrentPreferences.SearchVideoType, Converter={StaticResource videoTypeToBooleanConverter}, ConverterParameter={x:Static enums:VideoType.Broadcast}}" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                    <RadioButton GroupName="VideoType" Content="Highlight" IsChecked="{Binding CurrentPreferences.SearchVideoType, Converter={StaticResource videoTypeToBooleanConverter}, ConverterParameter={x:Static enums:VideoType.Highlight}}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" />
-                    <RadioButton GroupName="VideoType" Content="Upload" IsChecked="{Binding CurrentPreferences.SearchVideoType, Converter={StaticResource videoTypeToBooleanConverter}, ConverterParameter={x:Static enums:VideoType.Upload}}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" />
+                    <RadioButton GroupName="VideoType" Content="방송" IsChecked="{Binding CurrentPreferences.SearchVideoType, Converter={StaticResource videoTypeToBooleanConverter}, ConverterParameter={x:Static enums:VideoType.Broadcast}}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <RadioButton GroupName="VideoType" Content="하이라이트" IsChecked="{Binding CurrentPreferences.SearchVideoType, Converter={StaticResource videoTypeToBooleanConverter}, ConverterParameter={x:Static enums:VideoType.Highlight}}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" />
+                    <RadioButton GroupName="VideoType" Content="업로드" IsChecked="{Binding CurrentPreferences.SearchVideoType, Converter={StaticResource videoTypeToBooleanConverter}, ConverterParameter={x:Static enums:VideoType.Upload}}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" />
                 </StackPanel>
                 <fa:ImageAwesome Grid.Row="2" Grid.Column="4" Style="{StaticResource Img_Help}">
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip Width="350">
                             <StackPanel>
-                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="Video Type" />
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="영상 타입" />
                                 <TextBlock TextAlignment="Justify">
-                                        Specify a default video type to use in the search dialog.
+                                        검색에 사용할 영상의 타입입니다.
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>
                     </fa:ImageAwesome.ToolTip>
                 </fa:ImageAwesome>
 
-                <TextBlock Grid.Row="4" Grid.Column="0"  Text="Load Limit" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                <TextBlock Grid.Row="4" Grid.Column="0"  Text="검색 제한" VerticalAlignment="Center" HorizontalAlignment="Right" />
                 <StackPanel Grid.Row="4" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
-                    <RadioButton GroupName="LoadLimit" Content="Last" IsChecked="{Binding CurrentPreferences.SearchLoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.Timespan}}" HorizontalAlignment="Left" />
+                    <RadioButton GroupName="LoadLimit" Content="오늘 날짜 부터" IsChecked="{Binding CurrentPreferences.SearchLoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.Timespan}}" HorizontalAlignment="Left" />
                     <ctrl:TlIntegerUpDown Minimum="1" Maximum="999" Width="60" IsEnabled="{Binding CurrentPreferences.SearchLoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.Timespan}}" Value="{Binding CurrentPreferences.SearchLoadLastDays}" Margin="5,0,0,0" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                    <TextBlock Text="days" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" />
+                    <TextBlock Text="일 까지" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" />
                 </StackPanel>
                 <fa:ImageAwesome Grid.Row="4" Grid.Column="4" Style="{StaticResource Img_Help}" VerticalAlignment="Center">
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip Width="350">
                             <StackPanel>
-                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="Load Limit" />
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="검색 제한" />
                                 <TextBlock TextAlignment="Justify">
-                                        Specify a default video load limit to use in the search dialog.
+                                        영상 검색의 제한을 설정합니다.
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>
@@ -181,21 +180,21 @@
                 </fa:ImageAwesome>
 
                 <StackPanel Grid.Row="6" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
-                    <RadioButton GroupName="LoadLimit" Content="Last" IsChecked="{Binding CurrentPreferences.SearchLoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.LastVods}}" HorizontalAlignment="Left" />
+                    <RadioButton GroupName="LoadLimit" Content="최신 영상 부터" IsChecked="{Binding CurrentPreferences.SearchLoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.LastVods}}" HorizontalAlignment="Left" />
                     <ctrl:TlIntegerUpDown Minimum="1" Maximum="999" Width="60" IsEnabled="{Binding CurrentPreferences.SearchLoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.LastVods}}" Value="{Binding CurrentPreferences.SearchLoadLastVods}" Margin="5,0,0,0" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                    <TextBlock Text="VODs" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" />
+                    <TextBlock Text="개 까지" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" />
                 </StackPanel>
 
-                <RadioButton Grid.Row="8" Grid.Column="2" GroupName="LoadLimit" Content="Only today" IsChecked="{Binding CurrentPreferences.SearchLoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.OnlyToday}}" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <RadioButton Grid.Row="8" Grid.Column="2" GroupName="LoadLimit" Content="오늘만 검색" IsChecked="{Binding CurrentPreferences.SearchLoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.OnlyToday}}" VerticalAlignment="Center" HorizontalAlignment="Left" />
 
-                <CheckBox Grid.Row="10" Grid.Column="2" IsChecked="{Binding CurrentPreferences.SearchOnStartup}" Content="Search on Start" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <CheckBox Grid.Row="10" Grid.Column="2" IsChecked="{Binding CurrentPreferences.SearchOnStartup}" Content="켜짐과 동시에 검색" VerticalAlignment="Center" HorizontalAlignment="Left" />
                 <fa:ImageAwesome Grid.Row="12" Grid.Column="4" Style="{StaticResource Img_Help}">
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip  Width="350">
                             <StackPanel>
                                 <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="Search on Start" />
                                 <TextBlock TextAlignment="Justify">
-                                        If enabled, Twitch Leecher performs a search with the above settings on application startup.
+                                        이 옵션이 켜져있다면, 켜짐과 동시에 다운로드를 자동으로 시작합니다.
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>
@@ -207,7 +206,7 @@
                 <Border.BorderBrush>
                     <SolidColorBrush Color="{StaticResource Global.Theme.Color}" />
                 </Border.BorderBrush>
-                <TextBlock  Text="Download" FontSize="21.333" FontWeight="Bold" />
+                <TextBlock  Text="다운로드" FontSize="21.333" FontWeight="Bold" />
             </Border>
 
             <Grid Grid.Row="5" Margin="15,0,0,0">
@@ -230,7 +229,7 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Column="0" Grid.Row="0" Text="Temporary Folder" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="임시 저장 폴더" VerticalAlignment="Center" HorizontalAlignment="Right" />
                 <Grid Grid.Column="2" Grid.Row="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -244,16 +243,16 @@
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip Width="350">
                             <StackPanel>
-                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="Temporary Folder" />
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="임시 저장 폴더" />
                                 <TextBlock TextAlignment="Justify">
-                                        Specify a temporary download folder. This folder will be used to store temporary files during the download process. You need write permissions on this folder.
+                                        영상을 임시적으로 저장할 폴더를 지정해주세요! 쓰기권한이 있어야 합니다.
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>
                     </fa:ImageAwesome.ToolTip>
                 </fa:ImageAwesome>
 
-                <TextBlock Grid.Column="0" Grid.Row="2" Text="Download Folder" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="다운로드 폴더" VerticalAlignment="Center" HorizontalAlignment="Right" />
                 <Grid Grid.Column="2" Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -267,24 +266,24 @@
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip Width="350">
                             <StackPanel>
-                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="Download Folder" />
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="다운로드 폴더" />
                                 <TextBlock TextAlignment="Justify">
-                                        Specify a default download folder to use in the download dialog. You need write permissions on this folder.
+                                        최종적으로 다운로드될 폴더를 지정해주세요! 쓰기권한이 있어야합니다.
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>
                     </fa:ImageAwesome.ToolTip>
                 </fa:ImageAwesome>
 
-                <TextBlock Grid.Column="0" Grid.Row="4" Text="Filename Template" VerticalAlignment="Center" />
+                <TextBlock Grid.Column="0" Grid.Row="4" Text="파일 이름 형식" VerticalAlignment="Center" />
                 <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding CurrentPreferences.DownloadFileName, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />
                 <fa:ImageAwesome Grid.Row="4" Grid.Column="4" Style="{StaticResource Img_Help}">
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip Width="415">
                             <StackPanel>
-                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="Filename Template" />
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="파일 이름 형식" />
                                 <TextBlock TextAlignment="Justify">
-                                        Specify a default filename template for your downloads.
+                                        다운로드에 사용할 기본 파일명 형식을 지정합니다.
                                 </TextBlock>
                                 <Grid Margin="0,5,0,0">
                                     <Grid.RowDefinitions>
@@ -373,28 +372,28 @@
                     </fa:ImageAwesome.ToolTip>
                 </fa:ImageAwesome>
 
-                <CheckBox Grid.Row="6" Grid.Column="2" IsChecked="{Binding CurrentPreferences.DownloadSubfoldersForFav}" Content="Create subfolders for favourite channels" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <CheckBox Grid.Row="6" Grid.Column="2" IsChecked="{Binding CurrentPreferences.DownloadSubfoldersForFav}" Content="선호하는 채널만을 위한 전용폴더에 저장하기" VerticalAlignment="Center" HorizontalAlignment="Left" />
                 <fa:ImageAwesome Grid.Row="6" Grid.Column="4" Style="{StaticResource Img_Help}">
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip  Width="350">
                             <StackPanel>
-                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="Create subfolders for favourite channels" />
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="선호하는 채널만을 위한 전용폴더에 저장하기" />
                                 <TextBlock TextAlignment="Justify">
-                                    If enabled, VODs of your favorite channels will be downloaded to their own subfolders within the download folder.
+                                    이 옵션이 켜져있다면 선호하는 채널만을 위한 전용 하위폴더에 저장됩니다.
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>
                     </fa:ImageAwesome.ToolTip>
                 </fa:ImageAwesome>
 
-                <CheckBox Grid.Row="8" Grid.Column="2" IsChecked="{Binding CurrentPreferences.DownloadRemoveCompleted}" Content="Remove successful downloads from queue" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <CheckBox Grid.Row="8" Grid.Column="2" IsChecked="{Binding CurrentPreferences.DownloadRemoveCompleted}" Content="완료된 다운로드 기록에서 지우기" VerticalAlignment="Center" HorizontalAlignment="Left" />
                 <fa:ImageAwesome Grid.Row="8" Grid.Column="4" Style="{StaticResource Img_Help}">
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip  Width="350">
                             <StackPanel>
-                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="Remove Successful Downloads" />
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="완료된 다운로드 기록에서 지우기" />
                                 <TextBlock TextAlignment="Justify">
-                                    If enabled, successfully downloaded VODs get removed from the download queue.
+                                    이 옵션이 켜져있다면, 완료된 다운로드는 기록에서 지워집니다.
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>
@@ -406,7 +405,7 @@
                 <Border.BorderBrush>
                     <SolidColorBrush Color="{StaticResource Global.Theme.Color}" />
                 </Border.BorderBrush>
-                <TextBlock  Text="Miscellaneous" FontSize="21.333" FontWeight="Bold" />
+                <TextBlock  Text="잡다한 기능" FontSize="21.333" FontWeight="Bold" />
             </Border>
 
             <Grid Grid.Row="7" Margin="15,0,0,0">
@@ -423,21 +422,21 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <CheckBox Grid.Row="0" Grid.Column="2" Content="Use external video player" IsChecked="{Binding CurrentPreferences.MiscUseExternalPlayer}" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <CheckBox Grid.Row="0" Grid.Column="2" Content="외부 영상 플레이어 사용하기" IsChecked="{Binding CurrentPreferences.MiscUseExternalPlayer}" VerticalAlignment="Center" HorizontalAlignment="Left" />
                 <fa:ImageAwesome Grid.Row="0" Grid.Column="4" Style="{StaticResource Img_Help}">
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip Width="350">
                             <StackPanel>
-                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="Use external video player" />
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="외부 영상 플레이어 사용하기" />
                                 <TextBlock TextAlignment="Justify">
-                                        Use an external video player (e.g. VLC) to watch the videos instead of opening them in the browser
+                                        외부 영상플레이어(곰 플레이어, 다음 팟 플레이어 등등...)을 이용하여 영상을 바로 볼 수 있습니다.
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>
                     </fa:ImageAwesome.ToolTip>
                 </fa:ImageAwesome>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="Video Player" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="영상 플레이어" VerticalAlignment="Center" HorizontalAlignment="Right" />
                 <Grid Grid.Row="2" Grid.Column="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
@@ -457,9 +456,9 @@
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip Width="350">
                             <StackPanel>
-                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="Video Player" />
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="영상 플레이어" />
                                 <TextBlock TextAlignment="Justify">
-                                        The external video player to use (preferably VLC because it works great with Twitch streams)
+                                        외부 영상 플레이어를 이용하여 영상을 즐기세요!
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>

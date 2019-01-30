@@ -73,7 +73,7 @@ namespace TwitchLeecher.Gui.ViewModels
                 {
                     _twitchService.RevokeAuthorization();
                     _navigationService.ShowAuthorize();
-                    _notificationService.ShowNotification("Twitch authorization has been revoked!");
+                    _notificationService.ShowNotification("트위치로 부터 로그아웃 되었습니다.");
                 }
             }
             catch (Exception ex)

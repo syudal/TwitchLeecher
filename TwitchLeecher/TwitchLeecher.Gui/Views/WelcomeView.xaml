@@ -13,9 +13,9 @@
     </UserControl.Resources>
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         <TextBlock HorizontalAlignment="Center" FontSize="24" FontWeight="Bold">
-            <Run Text="Welcome to " /><Run Text="{Binding ProductName, Mode=OneTime}" />
+            <Run Text="{Binding ProductName, Mode=OneTime}" /><Run Text="를 사용해주셔서 감사합니다!" />
         </TextBlock>
         <Image Source="/TwitchLeecher.Gui;component/Resources/TL_Icon.png" Width="150"  Margin="0,20,0,20" />
-        <TextBlock Text="Hit the 'Search' button in order to find your broadcasts..." HorizontalAlignment="Center" FontWeight="Bold" />
+        <TextBlock Text="'검색' 버튼을 눌러 방송을 찾아보세요!" HorizontalAlignment="Center" FontWeight="Bold" />
     </StackPanel>
 </UserControl>

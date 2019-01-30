@@ -28,7 +28,7 @@
             <Border.BorderBrush>
                 <SolidColorBrush Color="{StaticResource Global.Theme.Color}" />
             </Border.BorderBrush>
-            <TextBlock  Text="Download Video" FontSize="21.333" FontWeight="Bold" />
+            <TextBlock  Text="비디오 다운로드" FontSize="21.333" FontWeight="Bold" />
         </Border>
 
         <Grid Grid.Row="1" Grid.IsSharedSizeScope="True">
@@ -52,10 +52,10 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Title:" VerticalAlignment="Center" HorizontalAlignment="Right" />
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="제목:" VerticalAlignment="Center" HorizontalAlignment="Right" />
             <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding DownloadParams.Video.Title}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" FontWeight="Bold" VerticalAlignment="Center" />
 
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Quality:" VerticalAlignment="Center" HorizontalAlignment="Right" />
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="품질:" VerticalAlignment="Center" HorizontalAlignment="Right" />
             <ComboBox Name="cmbQuality" Grid.Row="2" Grid.Column="2" ItemsSource="{Binding DownloadParams.Video.Qualities}" SelectedItem="{Binding DownloadParams.Quality}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
@@ -64,7 +64,7 @@
                 </ComboBox.ItemTemplate>
             </ComboBox>
 
-            <TextBlock Grid.Row="4" Grid.Column="0" Text="Folder:" VerticalAlignment="Center" HorizontalAlignment="Right" />
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="폴더:" VerticalAlignment="Center" HorizontalAlignment="Right" />
             <Grid Grid.Row="4" Grid.Column="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -75,10 +75,10 @@
                 <Button Style="{StaticResource TlMiniButton}" Command="{Binding ChooseCommand}" Grid.Column="2" Grid.Row="0" Content="..." Height="Auto" />
             </Grid>
 
-            <TextBlock Grid.Row="6" Grid.Column="0" Text="Filename:" VerticalAlignment="Center" HorizontalAlignment="Right" />
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="파일 명:" VerticalAlignment="Center" HorizontalAlignment="Right" />
             <TextBox Grid.Row="6" Grid.Column="2" IsReadOnly="{Binding UseCustomFilename, Mode=OneWay, Converter={StaticResource InverseBoolConverter}}" Text="{Binding DownloadParams.Filename, UpdateSourceTrigger=PropertyChanged}" />
 
-            <CheckBox Grid.Row="8" Grid.Column="2" IsChecked="{Binding UseCustomFilename, UpdateSourceTrigger=PropertyChanged}" Content="Use Custom Filename" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-1,0,0,0" FontSize="12" />
+            <CheckBox Grid.Row="8" Grid.Column="2" IsChecked="{Binding UseCustomFilename, UpdateSourceTrigger=PropertyChanged}" Content="파일 명 개인 설정" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-1,0,0,0" FontSize="12" />
 
             <Grid Grid.Row="10" Grid.Column="2">
                 <Grid.RowDefinitions>
@@ -95,8 +95,8 @@
                             <ColumnDefinition Width="1*" />
                             <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="Crop Video" FontWeight="Bold" />
-                        <TextBlock Grid.Column="1" Text="{Binding DownloadParams.Video.LengthStr, StringFormat='Total Length: {0}', FallbackValue='Total Length: 00:00:00'}" HorizontalAlignment="Right" FontSize="12" VerticalAlignment="Bottom" />
+                        <TextBlock Grid.Column="0" Text="비디오 자르기" FontWeight="Bold" />
+                        <TextBlock Grid.Column="1" Text="{Binding DownloadParams.Video.LengthStr, StringFormat='Total Length: {0}', FallbackValue='전체 길이: 00:00:00'}" HorizontalAlignment="Right" FontSize="12" VerticalAlignment="Bottom" />
                     </Grid>
                 </Border>
 
@@ -120,14 +120,14 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
-                    <CheckBox Grid.Row="0" Grid.Column="0" IsChecked="{Binding DownloadParams.CropStart}" Content="Start" VerticalAlignment="Center" />
+                    <CheckBox Grid.Row="0" Grid.Column="0" IsChecked="{Binding DownloadParams.CropStart}" Content="시작" VerticalAlignment="Center" />
                     <ctrl:TlIntegerUpDown Grid.Row="0" Grid.Column="2" Style="{StaticResource TlTimeUpDown}" Value="{Binding CropStartHours, UpdateSourceTrigger=LostFocus}" IsEnabled="{Binding DownloadParams.CropStart}" Maximum="99" Loop="False" />
                     <TextBlock Grid.Row="0" Grid.Column="4"  Text=":" VerticalAlignment="Center" />
                     <ctrl:TlIntegerUpDown Grid.Row="0" Grid.Column="6" Style="{StaticResource TlTimeUpDown}" Value="{Binding CropStartMinutes, UpdateSourceTrigger=LostFocus}" IsEnabled="{Binding DownloadParams.CropStart}" />
                     <TextBlock Grid.Row="0" Grid.Column="8"  Text=":" VerticalAlignment="Center" />
                     <ctrl:TlIntegerUpDown Grid.Row="0" Grid.Column="10" Style="{StaticResource TlTimeUpDown}" Value="{Binding CropStartSeconds, UpdateSourceTrigger=LostFocus}" IsEnabled="{Binding DownloadParams.CropStart}" />
 
-                    <CheckBox Grid.Row="2" Grid.Column="0" IsChecked="{Binding  DownloadParams.CropEnd}" Content="End" VerticalAlignment="Center" />
+                    <CheckBox Grid.Row="2" Grid.Column="0" IsChecked="{Binding  DownloadParams.CropEnd}" Content="종료" VerticalAlignment="Center" />
                     <ctrl:TlIntegerUpDown Grid.Row="2" Grid.Column="2" Style="{StaticResource TlTimeUpDown}" Value="{Binding CropEndHours, UpdateSourceTrigger=LostFocus}" IsEnabled="{Binding DownloadParams.CropEnd}" Maximum="99" Loop="False" />
                     <TextBlock Grid.Row="2" Grid.Column="4"  Text=":" VerticalAlignment="Center" />
                     <ctrl:TlIntegerUpDown Grid.Row="2" Grid.Column="6" Style="{StaticResource TlTimeUpDown}" Value="{Binding CropEndMinutes, UpdateSourceTrigger=LostFocus}" IsEnabled="{Binding DownloadParams.CropEnd}" />

@@ -75,7 +75,7 @@ namespace TwitchLeecher.Gui.ViewModels
                 menuCommands = new List<MenuCommand>();
             }
 
-            menuCommands.Add(new MenuCommand(DownloadCommand, "Download", "Download"));
+            menuCommands.Add(new MenuCommand(DownloadCommand, "다운로드", "Download"));
 
             return menuCommands;
         }

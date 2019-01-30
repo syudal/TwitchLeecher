@@ -31,13 +31,13 @@
             <Border.BorderBrush>
                 <SolidColorBrush Color="{StaticResource Global.Theme.Color}" />
             </Border.BorderBrush>
-            <TextBlock  Text="Search" FontSize="21.333" FontWeight="Bold" />
+            <TextBlock  Text="검색" FontSize="21.333" FontWeight="Bold" />
         </Border>
 
         <TabControl Grid.Row="1" Height="310">
             <TabItem IsSelected="{Binding SearchParams.SearchType, Converter={StaticResource searchTypeToBooleanConverter}, ConverterParameter={x:Static enums:SearchType.Channel}}" Width="85">
                 <TabItem.Header>
-                    <TextBlock Style="{StaticResource TlTabItemText}" FontWeight="Bold" Text="Channel" />
+                    <TextBlock Style="{StaticResource TlTabItemText}" FontWeight="Bold" Text="채널" />
                 </TabItem.Header>
                 <Grid Margin="0,10,0,0" Grid.IsSharedSizeScope="True" VerticalAlignment="Top">
                     <Grid.RowDefinitions>
@@ -58,7 +58,7 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Channel Name:" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="채널 명:" VerticalAlignment="Center" HorizontalAlignment="Right" />
                     <ComboBox Grid.Column="2" Grid.Row="0" Name="cmbChannel" IsEditable="True" Text="{Binding SearchParams.Channel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}" ItemsSource="{Binding FavChannels, Mode=OneWay}" VerticalContentAlignment="Center">
                         <ComboBox.InputBindings>
                             <KeyBinding Command="{Binding SearchCommand}" Key="Enter" />
@@ -66,13 +66,13 @@
                         </ComboBox.InputBindings>
                     </ComboBox>
 
-                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Video Type:" VerticalAlignment="Center" Margin="20,0,0,0" HorizontalAlignment="Right" />
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="영상 종류:" VerticalAlignment="Center" Margin="20,0,0,0" HorizontalAlignment="Right" />
                     <StackPanel Grid.Column="2" Grid.Row="2" Orientation="Horizontal">
-                        <RadioButton GroupName="VideoType" Content="Broadcast" IsChecked="{Binding SearchParams.VideoType, Converter={StaticResource videoTypeToBooleanConverter}, ConverterParameter={x:Static enums:VideoType.Broadcast}}" VerticalAlignment="Center" HorizontalAlignment="Left" />
-                        <RadioButton GroupName="VideoType" Content="Highlight" IsChecked="{Binding SearchParams.VideoType, Converter={StaticResource videoTypeToBooleanConverter}, ConverterParameter={x:Static enums:VideoType.Highlight}}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" />
-                        <RadioButton GroupName="VideoType" Content="Upload" IsChecked="{Binding SearchParams.VideoType, Converter={StaticResource videoTypeToBooleanConverter}, ConverterParameter={x:Static enums:VideoType.Upload}}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" />
+                        <RadioButton GroupName="VideoType" Content="방송" IsChecked="{Binding SearchParams.VideoType, Converter={StaticResource videoTypeToBooleanConverter}, ConverterParameter={x:Static enums:VideoType.Broadcast}}" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                        <RadioButton GroupName="VideoType" Content="하이라이트" IsChecked="{Binding SearchParams.VideoType, Converter={StaticResource videoTypeToBooleanConverter}, ConverterParameter={x:Static enums:VideoType.Highlight}}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" />
+                        <RadioButton GroupName="VideoType" Content="업로드" IsChecked="{Binding SearchParams.VideoType, Converter={StaticResource videoTypeToBooleanConverter}, ConverterParameter={x:Static enums:VideoType.Upload}}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" />
                     </StackPanel>
-                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Load Limit:" VerticalAlignment="Center" Margin="20,0,0,0" HorizontalAlignment="Right" />
+                    <TextBlock Grid.Column="0" Grid.Row="4" Text="검색 제한:" VerticalAlignment="Center" Margin="20,0,0,0" HorizontalAlignment="Right" />
 
                     <Grid Grid.Column="2" Grid.Row="4">
                         <Grid.ColumnDefinitions>
@@ -80,7 +80,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <RadioButton Grid.Column="0" GroupName="LoadLimit" Content="From" IsChecked="{Binding SearchParams.LoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.Timespan}}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        <RadioButton Grid.Column="0" GroupName="LoadLimit" Content="시작 :" IsChecked="{Binding SearchParams.LoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.Timespan}}" HorizontalAlignment="Left" VerticalAlignment="Center" />
                         <Grid  Grid.Column="1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -89,7 +89,7 @@
                             </Grid.ColumnDefinitions>
 
                             <ctrl:TlDateTimePicker Grid.Column="0" Style="{StaticResource TlDatePicker}" IsEnabled="{Binding SearchParams.LoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.Timespan}}" Value="{Binding SearchParams.LoadFrom, UpdateSourceTrigger=LostFocus}" DefaultValue="{Binding SearchParams.LoadFromDefault}" Margin="6,0,0,0" VerticalAlignment="Center" />
-                            <TextBlock Grid.Column="1" Text="to" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,0,0,0" />
+                            <TextBlock Grid.Column="1" Text="끝 :" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,0,0,0" />
                             <ctrl:TlDateTimePicker Grid.Column="2" Style="{StaticResource TlDatePicker}" IsEnabled="{Binding SearchParams.LoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.Timespan}}" Value="{Binding SearchParams.LoadTo, UpdateSourceTrigger=LostFocus}" DefaultValue="{Binding SearchParams.LoadToDefault}" Margin="6,0,0,0" VerticalAlignment="Center" />
                         </Grid>
                     </Grid>
@@ -100,19 +100,19 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
 
-                        <RadioButton Grid.Column="0" GroupName="LoadLimit" Content="Last" IsChecked="{Binding SearchParams.LoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.LastVods}}" HorizontalAlignment="Left" />
+                        <RadioButton Grid.Column="0" GroupName="LoadLimit" Content="최신" IsChecked="{Binding SearchParams.LoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.LastVods}}" HorizontalAlignment="Left" />
                         <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="6,0,0,0">
                             <ctrl:TlIntegerUpDown Minimum="1" Maximum="999" Width="60" IsEnabled="{Binding SearchParams.LoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.LastVods}}" Value="{Binding SearchParams.LoadLastVods}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                            <TextBlock Text="VODs" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,0,0,0" />
+                            <TextBlock Text="개의 영상까지" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,0,0,0" />
                         </StackPanel>
                     </Grid>
 
-                    <RadioButton Grid.Column="2" Grid.Row="8" GroupName="LoadLimit" Content="Only today" IsChecked="{Binding SearchParams.LoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.OnlyToday}}" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                    <RadioButton Grid.Column="2" Grid.Row="8" GroupName="LoadLimit" Content="오늘만" IsChecked="{Binding SearchParams.LoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.OnlyToday}}" VerticalAlignment="Center" HorizontalAlignment="Left" />
                 </Grid>
             </TabItem>
             <TabItem IsSelected="{Binding SearchParams.SearchType, Converter={StaticResource searchTypeToBooleanConverter}, ConverterParameter={x:Static enums:SearchType.Urls}}" Width="85">
                 <TabItem.Header>
-                    <TextBlock Style="{StaticResource TlTabItemText}" FontWeight="Bold" Text="Urls" />
+                    <TextBlock Style="{StaticResource TlTabItemText}" FontWeight="Bold" Text="주소" />
                 </TabItem.Header>
                 <Grid Margin="0,10,0,0" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
                     <Grid.RowDefinitions>
@@ -125,20 +125,20 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0" Text="Paste one or more Twitch video urls in the textbox below. Make sure every url is placed in a new line." />
-                    <TextBlock Grid.Row="2" Text="Example: https://www.twitch.tv/videos/123456789" />
+                    <TextBlock Grid.Row="0" Text="트위치 비디오 주소를 복사하여 붙혀넣기 해주세요. 여러개의 비디오를 다운로드 받고 싶으시다면 한줄씩 띄워서 붙혀넣기 해주세요." />
+                    <TextBlock Grid.Row="2" Text="예제: https://www.twitch.tv/videos/123456789" />
                     <TextBox Grid.Row="4" Style="{StaticResource TlMultilineTextBox}" Text="{Binding SearchParams.Urls, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="140" />
                     <Button Grid.Row="6" Command="{Binding ClearUrlsCommand}" Width="75" HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
                             <fa:ImageAwesome Icon="Eraser" Margin="0,4,0,2" Width="16" Height="16" RenderTransformOrigin="0.5,0.5" />
-                            <TextBlock Text="Clear" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="14.667" RenderTransformOrigin="0.5,0.5" />
+                            <TextBlock Text="지우기" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="14.667" RenderTransformOrigin="0.5,0.5" />
                         </StackPanel>
                     </Button>
                 </Grid>
             </TabItem>
             <TabItem IsSelected="{Binding SearchParams.SearchType, Converter={StaticResource searchTypeToBooleanConverter}, ConverterParameter={x:Static enums:SearchType.Ids}}" Width="85">
                 <TabItem.Header>
-                    <TextBlock Style="{StaticResource TlTabItemText}" FontWeight="Bold" Text="IDs" />
+                    <TextBlock Style="{StaticResource TlTabItemText}" FontWeight="Bold" Text="고유번호" />
                 </TabItem.Header>
                 <Grid Margin="0,10,0,0" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
 
@@ -152,13 +152,13 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0" Text="Paste one or more Twitch video IDs in the textbox below. Make sure every ID is placed in a new line." />
-                    <TextBlock Grid.Row="2" Text="Example: 123456789" />
+                    <TextBlock Grid.Row="0" Text="트위치 영상의 고유번호를 입력해주세요. 여려개의 영상은 한 줄씩 띄어서 입력해주세요." />
+                    <TextBlock Grid.Row="2" Text="예제: 123456789" />
                     <TextBox Grid.Row="4" Style="{StaticResource TlMultilineTextBox}" Text="{Binding SearchParams.Ids, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="140" />
                     <Button Grid.Row="6" Command="{Binding ClearIdsCommand}" Width="75" HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
                             <fa:ImageAwesome Icon="Eraser" Margin="0,4,0,2" Width="16" Height="16" RenderTransformOrigin="0.5,0.5" />
-                            <TextBlock Text="Clear" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="14.667" RenderTransformOrigin="0.5,0.5" />
+                            <TextBlock Text="지우기" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="14.667" RenderTransformOrigin="0.5,0.5" />
                         </StackPanel>
                     </Button>
                 </Grid>

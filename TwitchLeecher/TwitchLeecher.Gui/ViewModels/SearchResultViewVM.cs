@@ -178,11 +178,11 @@ namespace TwitchLeecher.Gui.ViewModels
                             {
                                 if (!_twitchService.IsAuthorized)
                                 {
-                                    _dialogService.ShowMessageBox("This video is sub-only! Please authorize your Twitch account by clicking the Twitch button in the menu.", "SUB HYPE!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                                    _dialogService.ShowMessageBox("이 비디오는 구독자 전용입니다! 메뉴에서 Twitch 버튼을 클릭하여 트위치 리쳐에 권한을 부여해주세요.", "구독냥이!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                                 }
                                 else
                                 {
-                                    _dialogService.ShowMessageBox("This video is sub-only but you are not subscribed to '" + video.Channel + "'!", "SUB HYPE!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                                    _dialogService.ShowMessageBox("이 비디오는 구독자 전용입니다! '" + video.Channel + "'에 구독해주세요!", "구독냥이!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                                 }
 
                                 return;
@@ -233,7 +233,7 @@ namespace TwitchLeecher.Gui.ViewModels
                 menuCommands = new List<MenuCommand>();
             }
 
-            menuCommands.Add(new MenuCommand(SeachCommnad, "New Search", "Search"));
+            menuCommands.Add(new MenuCommand(SeachCommnad, "검색", "Search"));
 
             return menuCommands;
         }

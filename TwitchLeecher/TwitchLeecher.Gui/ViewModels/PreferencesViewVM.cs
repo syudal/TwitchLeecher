@@ -366,7 +366,7 @@ namespace TwitchLeecher.Gui.ViewModels
                     {
                         _preferencesService.Save(_currentPreferences);
                         CurrentPreferences = null;
-                        _notificationService.ShowNotification("Preferences saved");
+                        _notificationService.ShowNotification("기본 설정이 저장되었습니다.");
                     }
                 }
             }
@@ -382,7 +382,7 @@ namespace TwitchLeecher.Gui.ViewModels
             {
                 lock (_commandLockObject)
                 {
-                    MessageBoxResult result = _dialogService.ShowMessageBox("Undo current changes and reload last saved preferences?", "Undo", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    MessageBoxResult result = _dialogService.ShowMessageBox("현재 변경 내용을 취소하고 마지막으로 저장된 기본 설정을 다시 불러오시겠습니까?", "되돌리기", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
                     if (result == MessageBoxResult.Yes)
                     {
@@ -403,7 +403,7 @@ namespace TwitchLeecher.Gui.ViewModels
             {
                 lock (_commandLockObject)
                 {
-                    MessageBoxResult result = _dialogService.ShowMessageBox("Load default preferences?", "Defaults", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    MessageBoxResult result = _dialogService.ShowMessageBox("기본 설정을 불러오시겠습니까?", "기본 설정", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
                     if (result == MessageBoxResult.Yes)
                     {
@@ -431,7 +431,7 @@ namespace TwitchLeecher.Gui.ViewModels
 
                 if (CurrentPreferences.HasErrors)
                 {
-                    AddError(currentProperty, "Invalid Preferences!");
+                    AddError(currentProperty, "잘못된 기본 설정입니다!");
                 }
             }
         }
@@ -457,9 +457,9 @@ namespace TwitchLeecher.Gui.ViewModels
                 menuCommands = new List<MenuCommand>();
             }
 
-            menuCommands.Add(new MenuCommand(SaveCommand, "Save", "Save"));
-            menuCommands.Add(new MenuCommand(UndoCommand, "Undo", "Undo"));
-            menuCommands.Add(new MenuCommand(DefaultsCommand, "Default", "Wrench"));
+            menuCommands.Add(new MenuCommand(SaveCommand, "저장", "Save"));
+            menuCommands.Add(new MenuCommand(UndoCommand, "되돌리기", "Undo"));
+            menuCommands.Add(new MenuCommand(DefaultsCommand, "기본 값", "Wrench"));
 
             return menuCommands;
         }

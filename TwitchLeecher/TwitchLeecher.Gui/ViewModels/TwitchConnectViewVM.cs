@@ -111,7 +111,7 @@ namespace TwitchLeecher.Gui.ViewModels
 
                             if (string.IsNullOrWhiteSpace(accessToken))
                             {
-                                _dialogService.ShowMessageBox("Twitch did not respond with an access token! Authorization aborted!", "Error", MessageBoxButton.OK);
+                                _dialogService.ShowMessageBox("트위치로 부터 인증 토큰의 응답이 없습니다. 인증이 취소되었습니다!", "Error", MessageBoxButton.OK);
                                 _navigationService.NavigateBack();
                             }
                             else
@@ -119,11 +119,11 @@ namespace TwitchLeecher.Gui.ViewModels
                                 if (_twitchService.Authorize(accessToken))
                                 {
                                     _navigationService.ShowRevokeAuthorization();
-                                    _notificationService.ShowNotification("Twitch authorization successful!");
+                                    _notificationService.ShowNotification("트위치 인증이 성공적으로 되었습니다.");
                                 }
                                 else
                                 {
-                                    _dialogService.ShowMessageBox("Access Token '" + accessToken + "' could not be verified! Authorization aborted!", "Error", MessageBoxButton.OK);
+                                    _dialogService.ShowMessageBox("인증 토큰 '" + accessToken + "' 을 확인 할 수 없습니다. 인증이 취소되었습니다!", "Error", MessageBoxButton.OK);
                                     _navigationService.NavigateBack();
                                 }
                             }
@@ -135,13 +135,13 @@ namespace TwitchLeecher.Gui.ViewModels
                             if (!string.IsNullOrWhiteSpace(error) && error.Equals("access_denied", StringComparison.OrdinalIgnoreCase))
                             {
                                 _navigationService.NavigateBack();
-                                _notificationService.ShowNotification("Twitch authorization has been canceled!");
+                                _notificationService.ShowNotification("트위치 인증이 취소되었습니다.");
                             }
                             else
                             {
                                 void UnspecifiedError()
                                 {
-                                    _dialogService.ShowMessageBox("Twitch responded with an unspecified error! Authorization aborted!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                    _dialogService.ShowMessageBox("지정되지 않은 오류입니다. 인증이 취소되었습니다!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                                     _navigationService.NavigateBack();
                                 }
 
@@ -156,11 +156,11 @@ namespace TwitchLeecher.Gui.ViewModels
                                     else
                                     {
                                         _dialogService.ShowMessageBox(
-                                            "Twitch responded with an error:" +
+                                            "트위치로 받은 오류 코드:" +
                                             Environment.NewLine + Environment.NewLine +
                                             "\"" + errorDesc + "\"" +
                                             Environment.NewLine + Environment.NewLine +
-                                            "Authorization aborted!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                            "인증이 취소되었습니다!", "에러", MessageBoxButton.OK, MessageBoxImage.Error);
                                         _navigationService.NavigateBack();
                                     }
                                 }
@@ -172,7 +172,7 @@ namespace TwitchLeecher.Gui.ViewModels
                         }
                         else
                         {
-                            _dialogService.ShowMessageBox("Twitch responded neither with an access token nor an error! Authorization aborted!", "Error", MessageBoxButton.OK);
+                            _dialogService.ShowMessageBox("트위치가 인증 토큰이나 오류로 응답하지 않았습니다! 인증이 취소되었습니다!", "Error", MessageBoxButton.OK);
                             _navigationService.NavigateBack();
                         }
                     }
@@ -208,7 +208,7 @@ namespace TwitchLeecher.Gui.ViewModels
                 menuCommands = new List<MenuCommand>();
             }
 
-            menuCommands.Add(new MenuCommand(CancelCommand, "Cancel", "Times"));
+            menuCommands.Add(new MenuCommand(CancelCommand, "취소", "Times"));
 
             return menuCommands;
         }
