@@ -1,6 +1,7 @@
 # Twitch Leecher
 
 Twitch 다시보기 영상을 가장 쉽게 다운로드 받을 수 있는 방법은 바로 트위치 리처를 이용하는 겁니다!
+
 ![Twitch Leecher Screenshot](http://www.fakesmilerevolution.com/files/fsr/twitchleecher/tl14.jpg)
 
 ## 프로젝트 살아있는 건가요?
@@ -11,7 +12,7 @@ Twitch 다시보기 영상을 가장 쉽게 다운로드 받을 수 있는 방�
 
 트위치 리쳐는 .NET 프레임워크 4.5 버전 이상에서 동작합니다!
 
-[여기서 다운로드](https://github.com/syudal/TwitchLeecher/releases)
+[여기서 다운로드](https://syudal.tistory.com/category/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/Twitch%20Leecher)
 
 ## 다른 다시보기 영상 다운로더와의 차이점이라면요....?
 
@@ -34,5 +35,7 @@ Twitch 다시보기 영상을 가장 쉽게 다운로드 받을 수 있는 방�
 - (가장중요) 무료
 
 ## 라이센스
+
 [MIT License](https://github.com/Franiac/TwitchLeecher/blob/master/LICENSE)
-역자 (https://syudal.blog.me/)
+
+[역자 블로그 놀러가기](https://syudal.tistory.com)
