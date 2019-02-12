@@ -19,7 +19,7 @@ namespace TwitchLeecher.Core.Models
             }
 
             NewVersion = newVersion ?? throw new ArgumentNullException(nameof(newVersion));
-            ReleaseDate = releaseDate;
+            ReleaseDate = releaseDate.ToString("yyyy년 MM월 dd일");
             DownloadUrl = downloadUrl;
             ReleaseNotes = releaseNotes;
         }
@@ -30,7 +30,7 @@ namespace TwitchLeecher.Core.Models
 
         public Version NewVersion { get; }
 
-        public DateTime ReleaseDate { get; }
+        public string ReleaseDate { get; }
 
         public string DownloadUrl { get; }
 

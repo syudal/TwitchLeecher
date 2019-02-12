@@ -14,8 +14,8 @@ namespace TwitchLeecher.Services.Services
     {
         #region Constants
 
-        private const string latestReleaseUrl = "https://github.com/Syudal/TwitchLeecher/releases/tag/v{0}-KOR";
-        private const string releasesApiUrl = "https://api.github.com/repos/Syudal/TwitchLeecher/releases";
+        private const string latestReleaseUrl = "https://github.com/syudal/TwitchLeecher/releases/tag/v{0}-KOR";
+        private const string releasesApiUrl = "https://api.github.com/repos/syudal/TwitchLeecher/releases";
 
         #endregion Constants
 
@@ -44,7 +44,7 @@ namespace TwitchLeecher.Services.Services
                             string releasedStr = releaseJson.Value<string>("published_at");
                             string infoStr = releaseJson.Value<string>("body");
 
-                            Version releaseVersion = Version.Parse(tagStr.Substring(1));
+                            Version releaseVersion = Version.Parse(tagStr.Substring(1,tagStr.Length - 5));
 
                             Version localVersion = AssemblyUtil.Get.GetAssemblyVersion();
 
