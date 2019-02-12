@@ -44,8 +44,8 @@
 
             <TextBlock Grid.Row="3" Text="프로그램 번역" FontWeight="Bold"  Margin="0,15,0,0" />
             <TextBlock Grid.Row="4" Margin="15,5,0,0">
-            <Hyperlink Command="{Binding OpenLinkCommand}" CommandParameter="https://syudal.blog.me/">
-                https://syudal.blog.me/
+            <Hyperlink Command="{Binding OpenLinkCommand}" CommandParameter="https://syudal.tistory.com/">
+                https://syudal.tistory.com/
             </Hyperlink>
             </TextBlock>
 
@@ -77,14 +77,14 @@
                 <Image Style="{StaticResource Img_Donate}" />
             </Button>
 
-            <TextBlock Grid.Row="8" Text="Source Code &amp; Documentation" FontWeight="Bold"  Margin="0,15,0,0" />
+            <TextBlock Grid.Row="8" Text="트위치 리처 한글화 프로젝트" FontWeight="Bold"  Margin="0,15,0,0" />
             <TextBlock Grid.Row="9" Margin="15,5,0,0">
-            <Hyperlink Command="{Binding OpenLinkCommand}" CommandParameter="http://github.com/Franiac/TwitchLeecher">
-                http://github.com/Franiac/TwitchLeecher
+            <Hyperlink Command="{Binding OpenLinkCommand}" CommandParameter="https://github.com/syudal/TwitchLeecher">
+                https://github.com/syudal/TwitchLeecher
             </Hyperlink>
             </TextBlock>
 
-            <TextBlock Grid.Row="10" Text="Links" FontWeight="Bold"  Margin="0,15,0,0" />
+            <TextBlock Grid.Row="10" Text="개발자 링크" FontWeight="Bold"  Margin="0,15,0,0" />
             <TextBlock Grid.Row="11" Margin="15,5,0,0">
             <Hyperlink Command="{Binding OpenLinkCommand}" CommandParameter="http://www.fakesmilerevolution.com">
                 http://www.fakesmilerevolution.com

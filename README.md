@@ -34,5 +34,5 @@ Twitch 다시보기 영상을 가장 쉽게 다운로드 받을 수 있는 방�
 - (가장중요) 무료
 
 ## 라이센스
-[MIT License](https://github.com/Franiac/TwitchLeecher/blob/master/LICENSE)
-역자 (https://syudal.blog.me/)
+- [MIT License](https://github.com/Franiac/TwitchLeecher/blob/master/LICENSE)
+- 역자 (https://syudal.tistory.com/category/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/Twitch%20Leecher)
