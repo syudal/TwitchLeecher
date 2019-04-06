@@ -47,7 +47,7 @@
     </Style>
 
     <Style x:Key="TlDownloadButton" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
-        <Setter Property="Content" Value="Download" />
+        <Setter Property="Content" Value="다운로드" />
         <Setter Property="Width" Value="Auto" />
         <Setter Property="Height" Value="Auto" />
         <Setter Property="Padding" Value="3,0,3,0" />
@@ -70,11 +70,11 @@
     <SolidColorBrush x:Key="TlLoginButton.Authorized.MouseOver.Border" Color="{StaticResource LoginButton.Background.Authorized.MouseOver.Color}" />
 
     <ToolTip x:Key="TlAuthorizedToolTip">
-        <TextBlock Text="Your Twitch account is authorized for sub-only VOD downloads" />
+        <TextBlock Text="구독자 전용 다시보기를 다운받기위한 트위치 로그인이 완료되었습니다!" />
     </ToolTip>
 
     <ToolTip x:Key="TlUnauthorizedToolTip">
-        <TextBlock Text="Authorize your Twitch account in order to download sub-only VODs" />
+        <TextBlock Text="구독자 전용 다시보기를 다운받으시려면 트위치계정으로 로그인해주세요!" />
     </ToolTip>
 
     <Style x:Key="TlLoginButton" TargetType="Button" BasedOn="{StaticResource TlMiniButton}">

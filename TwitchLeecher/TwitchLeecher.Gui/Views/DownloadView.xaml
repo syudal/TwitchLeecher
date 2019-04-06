@@ -96,7 +96,7 @@
                             <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="비디오 자르기" FontWeight="Bold" />
-                        <TextBlock Grid.Column="1" Text="{Binding DownloadParams.Video.LengthStr, StringFormat='Total Length: {0}', FallbackValue='전체 길이: 00:00:00'}" HorizontalAlignment="Right" FontSize="12" VerticalAlignment="Bottom" />
+                        <TextBlock Grid.Column="1" Text="{Binding DownloadParams.Video.LengthStr, StringFormat='전체 길이: {0}', FallbackValue='전체 길이: 00:00:00'}" HorizontalAlignment="Right" FontSize="12" VerticalAlignment="Bottom" />
                     </Grid>
                 </Border>
 

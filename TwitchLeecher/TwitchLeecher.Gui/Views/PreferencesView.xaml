@@ -132,7 +132,7 @@
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip Width="350">
                             <StackPanel>
-                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="Favourite Channels" />
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="선호 채널" />
                                 <TextBlock TextAlignment="Justify">
                                         특별히 선호하는 채널의 목록을 검색에 미리 추가하여 등록할 수 있습니다. 옆의 +/-버튼을 사용하여 리스트에 추가하거나 제거하세요!
                                 </TextBlock>
@@ -192,7 +192,7 @@
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip  Width="350">
                             <StackPanel>
-                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="Search on Start" />
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="시작과 동시에 검색" />
                                 <TextBlock TextAlignment="Justify">
                                         이 옵션이 켜져있다면, 켜짐과 동시에 다운로드를 자동으로 시작합니다.
                                 </TextBlock>
@@ -319,52 +319,52 @@
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
 
-                                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Wildcard" FontWeight="Bold" />
-                                    <TextBlock Grid.Row="0" Grid.Column="2" Text="Description" FontWeight="Bold" />
-                                    <TextBlock Grid.Row="0" Grid.Column="4" Text="Example" FontWeight="Bold" />
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Text="명령어" FontWeight="Bold" />
+                                    <TextBlock Grid.Row="0" Grid.Column="2" Text="설명" FontWeight="Bold" />
+                                    <TextBlock Grid.Row="0" Grid.Column="4" Text="예시" FontWeight="Bold" />
 
                                     <TextBlock Grid.Row="2" Grid.Column="0" Text="{}{channel}" />
-                                    <TextBlock Grid.Row="2" Grid.Column="2" Text="Name of the channel" />
+                                    <TextBlock Grid.Row="2" Grid.Column="2" Text="채널명" />
                                     <TextBlock Grid.Row="2" Grid.Column="4" Text="FakeSmileRevolution" />
 
                                     <TextBlock Grid.Row="4" Grid.Column="0" Text="{}{game}" />
-                                    <TextBlock Grid.Row="4" Grid.Column="2" Text="Name of the game" />
+                                    <TextBlock Grid.Row="4" Grid.Column="2" Text="게임 이름" />
                                     <TextBlock Grid.Row="4" Grid.Column="4" Text="Dark Souls" />
 
                                     <TextBlock Grid.Row="6" Grid.Column="0" Text="{}{date}" />
-                                    <TextBlock Grid.Row="6" Grid.Column="2" Text="Recording date (yyyyMMdd)" />
+                                    <TextBlock Grid.Row="6" Grid.Column="2" Text="날짜 (yyyyMMdd)" />
                                     <TextBlock Grid.Row="6" Grid.Column="4" Text="20160418" />
 
                                     <TextBlock Grid.Row="8" Grid.Column="0" Text="{}{time}" />
-                                    <TextBlock Grid.Row="8" Grid.Column="2" Text="Recording time" />
+                                    <TextBlock Grid.Row="8" Grid.Column="2" Text="시간(초분시AM/PM)" />
                                     <TextBlock Grid.Row="8" Grid.Column="4" Text="034622PM" />
 
                                     <TextBlock Grid.Row="10" Grid.Column="0" Text="{}{time24}" />
-                                    <TextBlock Grid.Row="10" Grid.Column="2" Text="Recording time (24 hours)" />
+                                    <TextBlock Grid.Row="10" Grid.Column="2" Text="시간 (24시 형식)" />
                                     <TextBlock Grid.Row="10" Grid.Column="4" Text="174622" />
 
                                     <TextBlock Grid.Row="12" Grid.Column="0" Text="{}{id}" />
-                                    <TextBlock Grid.Row="12" Grid.Column="2" Text="Twitch video ID" />
+                                    <TextBlock Grid.Row="12" Grid.Column="2" Text="트위치 영상 ID" />
                                     <TextBlock Grid.Row="12" Grid.Column="4" Text="54869708" />
 
                                     <TextBlock Grid.Row="14" Grid.Column="0" Text="{}{title}" />
-                                    <TextBlock Grid.Row="14" Grid.Column="2" Text="Video Title" />
+                                    <TextBlock Grid.Row="14" Grid.Column="2" Text="영상 이름" />
                                     <TextBlock Grid.Row="14" Grid.Column="4" Text="Best Strim Evr!!!" />
 
                                     <TextBlock Grid.Row="16" Grid.Column="0" Text="{}{res}" />
-                                    <TextBlock Grid.Row="16" Grid.Column="2" Text="Video Resolution" />
+                                    <TextBlock Grid.Row="16" Grid.Column="2" Text="영상 해상도" />
                                     <TextBlock Grid.Row="16" Grid.Column="4" Text="1280x720" />
 
                                     <TextBlock Grid.Row="18" Grid.Column="0" Text="{}{fps}" />
-                                    <TextBlock Grid.Row="18" Grid.Column="2" Text="Video Framerate" />
+                                    <TextBlock Grid.Row="18" Grid.Column="2" Text="영상 프레임" />
                                     <TextBlock Grid.Row="18" Grid.Column="4" Text="60" />
 
                                     <TextBlock Grid.Row="20" Grid.Column="0" Text="{}{start}" />
-                                    <TextBlock Grid.Row="20" Grid.Column="2" Text="Crop start time (HHmmss)" />
+                                    <TextBlock Grid.Row="20" Grid.Column="2" Text="자르기 시작 시간 (시분초)" />
                                     <TextBlock Grid.Row="20" Grid.Column="4" Text="012744" />
 
                                     <TextBlock Grid.Row="22" Grid.Column="0" Text="{}{end}" />
-                                    <TextBlock Grid.Row="22" Grid.Column="2" Text="Crop end time (HHmmss)" />
+                                    <TextBlock Grid.Row="22" Grid.Column="2" Text="자르기 종료 시간 (시분초)" />
                                     <TextBlock Grid.Row="22" Grid.Column="4" Text="025317" />
                                 </Grid>
                             </StackPanel>
@@ -448,7 +448,7 @@
 
                     <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding CurrentPreferences.MiscExternalPlayer, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" />
                     <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource TlMiniButton}" Command="{Binding ChooseExternalPlayerCommand}" Content="..." Height="Auto" />
-                    <Button Grid.Row="0" Grid.Column="4" Style="{StaticResource TlMiniButton}" Command="{Binding ClearExternalPlayerCommand}" Height="Auto" ToolTip="Clear">
+                    <Button Grid.Row="0" Grid.Column="4" Style="{StaticResource TlMiniButton}" Command="{Binding ClearExternalPlayerCommand}" Height="Auto" ToolTip="지우기">
                         <fa:ImageAwesome Icon="Eraser" Width="16" Height="16" RenderTransformOrigin="0.5,0.5" />
                     </Button>
                 </Grid>
