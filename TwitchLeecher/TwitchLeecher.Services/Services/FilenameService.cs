@@ -69,6 +69,33 @@ namespace TwitchLeecher.Services.Services
             return filename;
         }
 
+        public string EnsureExtension(string filename, bool disableConversion)
+        {
+            if (string.IsNullOrWhiteSpace(filename))
+            {
+                return filename;
+            }
+
+            if (disableConversion && !filename.EndsWith(".ts"))
+            {
+                return filename + ".ts";
+            }
+            else if (disableConversion && filename.EndsWith(".mp4"))
+            {
+                return filename.Substring(0, filename.Length - 4) + ".ts";
+            }
+            else if (!disableConversion && !filename.EndsWith(".mp4"))
+            {
+                return filename + ".mp4";
+            }
+            else if (!disableConversion && filename.EndsWith(".ts"))
+            {
+                return filename.Substring(0, filename.Length - 3) + ".mp4";
+            }
+
+            return filename;
+        }
+
         #endregion Methods
     }
 }

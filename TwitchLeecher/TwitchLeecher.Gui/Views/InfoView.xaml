@@ -50,7 +50,7 @@
             </TextBlock>
 
             <TextBlock Grid.Row="5" Text="개발자 후원하기" FontWeight="Bold"  Margin="0,15,0,0" />
-            <TextBlock Grid.Row="6" Text="프로그램을 잘 사용하고 계신다면 맥주 한 잔 사주세요  :)" Margin="15,5,0,0" />
+            <TextBlock Grid.Row="6" Text="프로그램을 잘 사용하고 계신다면 개발자를 위하여 맥주 한 잔 사주세요  :)" Margin="15,5,0,0" />
             <Button Grid.Row="7" Command="{Binding DonateCommand}" HorizontalAlignment="Left" Height="Auto" Margin="15,5,0,0" Cursor="Hand">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
@@ -84,7 +84,7 @@
             </Hyperlink>
             </TextBlock>
 
-            <TextBlock Grid.Row="10" Text="개발자 링크" FontWeight="Bold"  Margin="0,15,0,0" />
+            <TextBlock Grid.Row="10" Text="개발자 정보" FontWeight="Bold"  Margin="0,15,0,0" />
             <TextBlock Grid.Row="11" Margin="15,5,0,0">
             <Hyperlink Command="{Binding OpenLinkCommand}" CommandParameter="http://www.fakesmilerevolution.com">
                 http://www.fakesmilerevolution.com

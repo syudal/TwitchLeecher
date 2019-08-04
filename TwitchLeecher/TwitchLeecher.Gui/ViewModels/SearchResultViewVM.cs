@@ -178,7 +178,7 @@ namespace TwitchLeecher.Gui.ViewModels
                             {
                                 if (!_twitchService.IsAuthorized)
                                 {
-                                    _dialogService.ShowMessageBox("이 비디오는 구독자 전용입니다! 메뉴에서 Twitch 버튼을 클릭하여 트위치 리쳐에 권한을 부여해주세요.", "구독냥이!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                                     _dialogService.ShowMessageBox("이 비디오는 구독자 전용입니다! 메뉴에서 Twitch 버튼을 클릭하여 트위치 리쳐에 권한을 부여해주세요.", "구독냥이!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                                 }
                                 else
                                 {
@@ -195,8 +195,9 @@ namespace TwitchLeecher.Gui.ViewModels
                                 : currentPrefs.DownloadFolder;
 
                             string filename = _filenameService.SubstituteWildcards(currentPrefs.DownloadFileName, video);
+                            filename = _filenameService.EnsureExtension(filename, currentPrefs.DownloadDisableConversion);
 
-                            DownloadParameters downloadParams = new DownloadParameters(video, vodAuthInfo, video.Qualities.First(), folder, filename);
+                            DownloadParameters downloadParams = new DownloadParameters(video, vodAuthInfo, video.Qualities.First(), folder, filename, currentPrefs.DownloadDisableConversion);
 
                             _navigationService.ShowDownload(downloadParams);
                         }

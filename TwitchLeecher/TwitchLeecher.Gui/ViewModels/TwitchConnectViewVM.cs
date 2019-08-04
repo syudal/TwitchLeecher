@@ -119,7 +119,7 @@ namespace TwitchLeecher.Gui.ViewModels
                                 if (_twitchService.Authorize(accessToken))
                                 {
                                     _navigationService.ShowRevokeAuthorization();
-                                    _notificationService.ShowNotification("트위치 인증이 성공적으로 되었습니다.");
+                                    _notificationService.ShowNotification("트위치 인증이 성공적으로 되었습니다!");
                                 }
                                 else
                                 {

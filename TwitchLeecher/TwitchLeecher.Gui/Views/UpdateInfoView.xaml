@@ -29,7 +29,7 @@
                 <Border.BorderBrush>
                     <SolidColorBrush Color="{StaticResource Global.Theme.Color}" />
                 </Border.BorderBrush>
-                <TextBlock  Text="업데이트가 있습니다." FontSize="21" FontWeight="Bold" />
+                <TextBlock  Text="업데이트가 있습니다!" FontSize="21" FontWeight="Bold" />
             </Border>
 
             <TextBlock Grid.Row="2">

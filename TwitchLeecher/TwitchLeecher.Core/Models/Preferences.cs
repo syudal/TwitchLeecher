@@ -15,7 +15,7 @@ namespace TwitchLeecher.Core.Models
 
         private bool _appCheckForUpdates;
 
-        private bool _appShowDonationButton;        
+        private bool _appShowDonationButton;
 
         private RangeObservableCollection<string> _searchFavouriteChannels;
 
@@ -40,6 +40,8 @@ namespace TwitchLeecher.Core.Models
         private bool _downloadSubfoldersForFav;
 
         private bool _downloadRemoveCompleted;
+
+        private bool _downloadDisableConversion;
 
         private bool _miscUseExternalPlayer;
 
@@ -255,6 +257,18 @@ namespace TwitchLeecher.Core.Models
             }
         }
 
+        public bool DownloadDisableConversion
+        {
+            get
+            {
+                return _downloadDisableConversion;
+            }
+            set
+            {
+                SetProperty(ref _downloadDisableConversion, value);
+            }
+        }
+
         #endregion Properties
 
         #region Methods
@@ -275,11 +289,11 @@ namespace TwitchLeecher.Core.Models
                     }
                     else if (!_miscExternalPlayer.EndsWith(".exe", StringComparison.OrdinalIgnoreCase))
                     {
-                        AddError(currentProperty, "파일 이름은 실행 파일이어야 합니다!");
+                        AddError(currentProperty, "파일 이름은 '.exe'로 끝나야합니다!");
                     }
                     else if (!File.Exists(_miscExternalPlayer))
                     {
-                        AddError(currentProperty, "지정한 파일이 없습니다.!");
+                        AddError(currentProperty, "지정된 파일이 없습니다!");
                     }
                 }
             }
@@ -340,17 +354,15 @@ namespace TwitchLeecher.Core.Models
             {
                 if (string.IsNullOrWhiteSpace(_downloadFileName))
                 {
-                    AddError(currentProperty, "기본 다운로드 파일 이름을 지정하세요!");
+                    AddError(currentProperty, "다운로드 파일 이름을 지정하세요!");
                 }
-                else if (!_downloadFileName.EndsWith(".mp4", StringComparison.OrdinalIgnoreCase))
+                else if (_downloadFileName.Contains(".") || FileSystem.FilenameContainsInvalidChars(_downloadFileName))
                 {
-                    AddError(currentProperty, "파일 이름의 끝은 '.mp4'로 끝나야 합니다!");
+                    string invalidChars = new string(Path.GetInvalidFileNameChars());
+
+                    AddError(currentProperty, $"파일 이름에 ({invalidChars}.)와 같은 불가능한 문자가 포함되어 있습니다!");
                 }
-                else if (FileSystem.FilenameContainsInvalidChars(_downloadFileName))
-                {
-                    AddError(currentProperty, "파일 이름에 잘못된 문자가 포함되어 있습니다!");
-                }
-            }            
+            }
         }
 
         public Preferences Clone()
@@ -372,7 +384,8 @@ namespace TwitchLeecher.Core.Models
                 DownloadFolder = DownloadFolder,
                 DownloadFileName = DownloadFileName,
                 DownloadSubfoldersForFav = DownloadSubfoldersForFav,
-                DownloadRemoveCompleted = DownloadRemoveCompleted
+                DownloadRemoveCompleted = DownloadRemoveCompleted,
+                DownloadDisableConversion = DownloadDisableConversion
             };
 
             clone.SearchFavouriteChannels.AddRange(SearchFavouriteChannels);

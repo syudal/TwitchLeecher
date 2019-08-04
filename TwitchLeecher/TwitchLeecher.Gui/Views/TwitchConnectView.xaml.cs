@@ -1,8 +1,6 @@
-﻿using System;
-using System.Reflection;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Navigation;
+using TwitchLeecher.Gui.Browser;
 using TwitchLeecher.Gui.ViewModels;
 
 namespace TwitchLeecher.Gui.Views
@@ -14,39 +12,26 @@ namespace TwitchLeecher.Gui.Views
             InitializeComponent();
 
             Loaded += TwitchConnectView_Loaded;
-            webBrowser.Navigating += WebBrowser_Navigating;
+            Unloaded += TwitchConnectView_Unloaded;
         }
 
         private void TwitchConnectView_Loaded(object sender, RoutedEventArgs e)
         {
-            HideScriptErrors(webBrowser);
-            webBrowser.Navigate("https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=37v97169hnj8kaoq8fs3hzz8v6jezdj&redirect_uri=http://www.tl.com&scope=user_subscriptions&force_verify=true");
+            chrome.IsBrowserInitializedChanged += Chrome_IsBrowserInitializedChanged;
+            chrome.RequestHandler = new AuthRequestHandler(Dispatcher, DataContext as TwitchConnectViewVM);
         }
 
-        private void WebBrowser_Navigating(object sender, NavigatingCancelEventArgs e)
+        private void TwitchConnectView_Unloaded(object sender, RoutedEventArgs e)
         {
-            string urlStr = e.Uri?.OriginalString;
-
-            if (!string.IsNullOrWhiteSpace(urlStr) && urlStr.StartsWith("http://www.tl.com", StringComparison.OrdinalIgnoreCase))
-            {
-                TwitchConnectViewVM vm = DataContext as TwitchConnectViewVM;
-                vm?.NavigatingCommand.Execute(e.Uri);
-                e.Cancel = true;
-            }
+            chrome.Dispose();
         }
 
-        private void HideScriptErrors(WebBrowser wb)
+        private void Chrome_IsBrowserInitializedChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            FieldInfo fiComWebBrowser = typeof(WebBrowser).GetField("_axIWebBrowser2", BindingFlags.Instance | BindingFlags.NonPublic);
-
-            if (fiComWebBrowser == null)
+            if (((bool)e.NewValue) == true)
             {
-                return;
+                chrome.Load("https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=37v97169hnj8kaoq8fs3hzz8v6jezdj&redirect_uri=http://www.tl.com&scope=user_subscriptions&force_verify=true");
             }
-
-            object objComWebBrowser = fiComWebBrowser.GetValue(wb);
-
-            objComWebBrowser.GetType().InvokeMember("Silent", BindingFlags.SetProperty, null, objComWebBrowser, new object[] { true });
         }
     }
 }

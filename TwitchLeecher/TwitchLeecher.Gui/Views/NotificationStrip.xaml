@@ -17,7 +17,7 @@
     <UserControl.RenderTransform>
         <ScaleTransform ScaleY="0" />
     </UserControl.RenderTransform>
-    <TextBlock Name="txtNotification" Text="Test" HorizontalAlignment="Center" Padding="0,10" FontWeight="Bold">
+    <TextBlock Name="txtNotification" Text="테스트" HorizontalAlignment="Center" Padding="0,10" FontWeight="Bold">
         <TextBlock.Foreground>
             <SolidColorBrush Color="{StaticResource Text.Foreground.Dark.Color}" />
         </TextBlock.Foreground>

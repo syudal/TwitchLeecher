@@ -20,7 +20,7 @@
 
                     <DataTemplate x:Key="emptyView">
                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="활성된 다운로드 없음" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" />
+                            <TextBlock Text="활성화된 다운로드 없음!" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" />
                             <fa:ImageAwesome Icon="Download" Margin="0,20,0,20" Width="150" Height="150" Opacity="0.5">
                                 <fa:ImageAwesome.Foreground>
                                     <SolidColorBrush Color="{StaticResource Global.Theme.Color}" />
@@ -183,12 +183,12 @@
                                     <SolidColorBrush Color="{StaticResource Global.Theme.Border.Color}" />
                                 </Border.BorderBrush>
                                 <Grid Height="26">
-                                    <ProgressBar Value="{Binding Progress}" IsIndeterminate="{Binding IsIndeterminate}" />
+                                    <ProgressBar Value="{Binding Progress, Mode=OneWay}" IsIndeterminate="{Binding IsIndeterminate}" />
                                     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="{Binding IsIndeterminate, Converter={StaticResource ResourceKey='InverseBVConverter'}}">
                                         <TextBlock.Foreground>
                                             <SolidColorBrush Color="Black" />
                                         </TextBlock.Foreground>
-                                        <Run Text="{Binding Progress, StringFormat=N1}" /><Run Text="%" />
+                                        <Run Text="{Binding Progress, Mode=OneWay, StringFormat=N1}" /><Run Text="%" />
                                     </TextBlock>
                                 </Grid>
                             </Border>

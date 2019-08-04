@@ -20,6 +20,7 @@ namespace TwitchLeecher.Core.Models
 
         private bool _cropStart;
         private bool _cropEnd;
+        private bool _disableConversion;
 
         private TimeSpan _cropStartTime;
         private TimeSpan _cropEndTime;
@@ -28,7 +29,7 @@ namespace TwitchLeecher.Core.Models
 
         #region Constructors
 
-        public DownloadParameters(TwitchVideo video, VodAuthInfo vodAuthInfo, TwitchVideoQuality quality, string folder, string filename)
+        public DownloadParameters(TwitchVideo video, VodAuthInfo vodAuthInfo, TwitchVideoQuality quality, string folder, string filename, bool disableConversion)
         {
             if (string.IsNullOrWhiteSpace(folder))
             {
@@ -46,6 +47,7 @@ namespace TwitchLeecher.Core.Models
 
             _folder = folder;
             _filename = filename;
+            _disableConversion = disableConversion;
 
             _cropEndTime = video.Length;
         }
@@ -113,6 +115,18 @@ namespace TwitchLeecher.Core.Models
             get
             {
                 return Path.Combine(_folder, _filename);
+            }
+        }
+
+        public bool DisableConversion
+        {
+            get
+            {
+                return _disableConversion;
+            }
+            set
+            {
+                SetProperty(ref _disableConversion, value, nameof(DisableConversion));
             }
         }
 
@@ -235,7 +249,11 @@ namespace TwitchLeecher.Core.Models
                 {
                     AddError(currentProperty, "파일 이름을 지정해주세요!");
                 }
-                else if (!_filename.EndsWith(".mp4", StringComparison.OrdinalIgnoreCase))
+                else if (_disableConversion && !_filename.EndsWith(".ts", StringComparison.OrdinalIgnoreCase))
+                {
+                    AddError(currentProperty, "파일의 이름은 '.ts'로 끝나야 합니다!");
+                }
+                else if (!_disableConversion && !_filename.EndsWith(".mp4", StringComparison.OrdinalIgnoreCase))
                 {
                     AddError(currentProperty, "파일의 이름은 '.mp4'로 끝나야 합니다!");
                 }
@@ -259,7 +277,7 @@ namespace TwitchLeecher.Core.Models
                     }
                     else if (CroppedLength.TotalSeconds < 5)
                     {
-                        AddError(currentProperty, "잘라낸 비디오는 5초 이상이어야 합니다.");
+                        AddError(currentProperty, "잘라낸 영상의 길이는 5초 이상이여야 합니다!");
                     }
                 }
             }
@@ -282,7 +300,7 @@ namespace TwitchLeecher.Core.Models
                     }
                     else if (CroppedLength.TotalSeconds < 5)
                     {
-                        AddError(currentProperty, "잘라낸 비디오는 5초 이상이어야 합니다.");
+                        AddError(currentProperty, "잘라낸 영상의 길이는 5초 이상이어야 합니다!");
                     }
                 }
             }

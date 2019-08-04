@@ -27,7 +27,7 @@
             <TextBlock  Text="트위치 계정에 로그인 해주세요" FontSize="21.333" FontWeight="Bold" />
         </Border>
 
-        <TextBlock Grid.Row="1" Text="다운로드 할 다시보기가 구독자 전용으로 되어있습니다. 다운받으시려면 트위치 리쳐를 트위치 계정과 연결해주세요!" />
+        <TextBlock Grid.Row="1" Text="다운로드 할 다시보기가 구독자 전용으로 되어있습니다. 다운받으시려면 아래의 버튼을 눌러 트위치 리쳐를 트위치 계정과 연결해주세요!" />
 
         <Button Grid.Row="3" Style="{StaticResource TlImageButton}" Command="{Binding ConnectCommand}" Cursor="Hand">
             <Button.Template>

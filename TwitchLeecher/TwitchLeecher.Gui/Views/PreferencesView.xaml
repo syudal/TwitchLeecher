@@ -22,7 +22,7 @@
     </UserControl.Resources>
 
     <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
-        <Grid VerticalAlignment="Center" Margin="20" HorizontalAlignment="Center" Grid.IsSharedSizeScope="True" Width="500">
+        <Grid VerticalAlignment="Center" Margin="20" HorizontalAlignment="Center" Grid.IsSharedSizeScope="True" Width="550">
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition />
@@ -74,12 +74,12 @@
                             <StackPanel>
                                 <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="후원 버튼 보기" />
                                 <TextBlock TextAlignment="Justify">
-                                        상단의 후원버튼을 ($) 켜거나 끕니다.
+                                        상단의 후원 버튼 ($)을 켜거나 끕니다.
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>
                     </fa:ImageAwesome.ToolTip>
-                </fa:ImageAwesome>                
+                </fa:ImageAwesome>
             </Grid>
 
             <Border Grid.Row="2" Margin="0, 20, 0, 10" Padding="0,0,0,5" BorderThickness="0,0,0,1">
@@ -185,14 +185,14 @@
                     <TextBlock Text="개 까지" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" />
                 </StackPanel>
 
-                <RadioButton Grid.Row="8" Grid.Column="2" GroupName="LoadLimit" Content="오늘만 검색" IsChecked="{Binding CurrentPreferences.SearchLoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.OnlyToday}}" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <RadioButton Grid.Row="8" Grid.Column="2" GroupName="LoadLimit" Content="오늘 영상만 검색" IsChecked="{Binding CurrentPreferences.SearchLoadLimitType, Converter={StaticResource loadLimitToBooleanConverter}, ConverterParameter={x:Static enums:LoadLimitType.OnlyToday}}" VerticalAlignment="Center" HorizontalAlignment="Left" />
 
                 <CheckBox Grid.Row="10" Grid.Column="2" IsChecked="{Binding CurrentPreferences.SearchOnStartup}" Content="켜짐과 동시에 검색" VerticalAlignment="Center" HorizontalAlignment="Left" />
                 <fa:ImageAwesome Grid.Row="12" Grid.Column="4" Style="{StaticResource Img_Help}">
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip  Width="350">
                             <StackPanel>
-                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="시작과 동시에 검색" />
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="켜짐과 동시에 검색" />
                                 <TextBlock TextAlignment="Justify">
                                         이 옵션이 켜져있다면, 켜짐과 동시에 다운로드를 자동으로 시작합니다.
                                 </TextBlock>
@@ -211,6 +211,8 @@
 
             <Grid Grid.Row="5" Margin="15,0,0,0">
                 <Grid.RowDefinitions>
+                    <RowDefinition SharedSizeGroup="r1" />
+                    <RowDefinition Height="10" />
                     <RowDefinition SharedSizeGroup="r1" />
                     <RowDefinition Height="10" />
                     <RowDefinition SharedSizeGroup="r1" />
@@ -245,7 +247,7 @@
                             <StackPanel>
                                 <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="임시 저장 폴더" />
                                 <TextBlock TextAlignment="Justify">
-                                        영상을 임시적으로 저장할 폴더를 지정해주세요! 쓰기권한이 있어야 합니다.
+                                        영상을 임시적으로 저장할 폴더를 지정해주세요! 해당 폴더에 쓰기권한이 있어야 합니다.
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>
@@ -268,7 +270,7 @@
                             <StackPanel>
                                 <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="다운로드 폴더" />
                                 <TextBlock TextAlignment="Justify">
-                                        최종적으로 다운로드될 폴더를 지정해주세요! 쓰기권한이 있어야합니다.
+                                        최종적으로 다운로드될 폴더를 지정해주세요! 해당 폴더에 쓰기권한이 있어야합니다.
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>
@@ -332,11 +334,11 @@
                                     <TextBlock Grid.Row="4" Grid.Column="4" Text="Dark Souls" />
 
                                     <TextBlock Grid.Row="6" Grid.Column="0" Text="{}{date}" />
-                                    <TextBlock Grid.Row="6" Grid.Column="2" Text="날짜 (yyyyMMdd)" />
+                                    <TextBlock Grid.Row="6" Grid.Column="2" Text="날짜 (년월일)" />
                                     <TextBlock Grid.Row="6" Grid.Column="4" Text="20160418" />
 
                                     <TextBlock Grid.Row="8" Grid.Column="0" Text="{}{time}" />
-                                    <TextBlock Grid.Row="8" Grid.Column="2" Text="시간(초분시AM/PM)" />
+                                    <TextBlock Grid.Row="8" Grid.Column="2" Text="시간 (초분시AM/PM)" />
                                     <TextBlock Grid.Row="8" Grid.Column="4" Text="034622PM" />
 
                                     <TextBlock Grid.Row="10" Grid.Column="0" Text="{}{time24}" />
@@ -348,7 +350,7 @@
                                     <TextBlock Grid.Row="12" Grid.Column="4" Text="54869708" />
 
                                     <TextBlock Grid.Row="14" Grid.Column="0" Text="{}{title}" />
-                                    <TextBlock Grid.Row="14" Grid.Column="2" Text="영상 이름" />
+                                    <TextBlock Grid.Row="14" Grid.Column="2" Text="영상 제목" />
                                     <TextBlock Grid.Row="14" Grid.Column="4" Text="Best Strim Evr!!!" />
 
                                     <TextBlock Grid.Row="16" Grid.Column="0" Text="{}{res}" />
@@ -356,7 +358,7 @@
                                     <TextBlock Grid.Row="16" Grid.Column="4" Text="1280x720" />
 
                                     <TextBlock Grid.Row="18" Grid.Column="0" Text="{}{fps}" />
-                                    <TextBlock Grid.Row="18" Grid.Column="2" Text="영상 프레임" />
+                                    <TextBlock Grid.Row="18" Grid.Column="2" Text="영상 FPS" />
                                     <TextBlock Grid.Row="18" Grid.Column="4" Text="60" />
 
                                     <TextBlock Grid.Row="20" Grid.Column="0" Text="{}{start}" />
@@ -386,14 +388,28 @@
                     </fa:ImageAwesome.ToolTip>
                 </fa:ImageAwesome>
 
-                <CheckBox Grid.Row="8" Grid.Column="2" IsChecked="{Binding CurrentPreferences.DownloadRemoveCompleted}" Content="완료된 다운로드 기록에서 지우기" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <CheckBox Grid.Row="8" Grid.Column="2" IsChecked="{Binding CurrentPreferences.DownloadRemoveCompleted}" Content="다운로드가 완료된 경우, 기록에서 지우기" VerticalAlignment="Center" HorizontalAlignment="Left" />
                 <fa:ImageAwesome Grid.Row="8" Grid.Column="4" Style="{StaticResource Img_Help}">
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip  Width="350">
                             <StackPanel>
-                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="완료된 다운로드 기록에서 지우기" />
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text="다운로드가 완료된 경우, 기록에서 지우기" />
                                 <TextBlock TextAlignment="Justify">
                                     이 옵션이 켜져있다면, 완료된 다운로드는 기록에서 지워집니다.
+                                </TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </fa:ImageAwesome.ToolTip>
+                </fa:ImageAwesome>
+
+                <CheckBox Grid.Row="10" Grid.Column="2" IsChecked="{Binding CurrentPreferences.DownloadDisableConversion}" Content=".mp4로 변환 사용 안 함(자르기 기능이 사용 불가합니다)" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <fa:ImageAwesome Grid.Row="10" Grid.Column="4" Style="{StaticResource Img_Help}">
+                    <fa:ImageAwesome.ToolTip>
+                        <ToolTip  Width="350">
+                            <StackPanel>
+                                <TextBlock Style="{StaticResource TlToolTipHeadlineText}" Text=".mp4로 변환 사용 안 함" />
+                                <TextBlock TextAlignment="Justify">
+                                    이 모드를 사용하면 원본 .ts파일을 다운로드 받을 수 있습니다. 하지만, 자르기 기능을 사용 할 수 없습니다!
                                 </TextBlock>
                             </StackPanel>
                         </ToolTip>
@@ -466,6 +482,5 @@
                 </fa:ImageAwesome>
             </Grid>
         </Grid>
-        
     </ScrollViewer>
 </UserControl>
