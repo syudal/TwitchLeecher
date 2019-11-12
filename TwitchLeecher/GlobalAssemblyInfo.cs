@@ -6,5 +6,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("Franiac & Syudal")]
 [assembly: AssemblyCopyright("Copyright ?2018 Dominik Rebitzer & Syudal")]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.7.0.0")]
+[assembly: AssemblyFileVersion("1.7.2.0")]
 [assembly: ComVisible(false)]
