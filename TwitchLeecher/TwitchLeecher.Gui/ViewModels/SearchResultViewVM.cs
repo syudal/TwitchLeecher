@@ -176,14 +176,7 @@ namespace TwitchLeecher.Gui.ViewModels
 
                             if (!vodAuthInfo.Privileged && vodAuthInfo.SubOnly)
                             {
-                                if (!_twitchService.IsAuthorized)
-                                {
-                                     _dialogService.ShowMessageBox("이 비디오는 구독자 전용입니다! 메뉴에서 Twitch 버튼을 클릭하여 트위치 리쳐에 권한을 부여해주세요.", "구독냥이!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                                }
-                                else
-                                {
-                                    _dialogService.ShowMessageBox("이 비디오는 구독자 전용입니다! '" + video.Channel + "'에 구독해주세요!", "구독냥이!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                                }
+                                _dialogService.ShowMessageBox("이 비디오는 구독자 전용입니다! '" + video.Channel + "'에 구독해주세요!", "구독냥이!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
                                 return;
                             }
