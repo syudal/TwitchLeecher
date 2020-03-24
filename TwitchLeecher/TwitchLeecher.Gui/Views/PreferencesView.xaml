@@ -402,7 +402,7 @@
                     </fa:ImageAwesome.ToolTip>
                 </fa:ImageAwesome>
 
-                <CheckBox Grid.Row="10" Grid.Column="2" IsChecked="{Binding CurrentPreferences.DownloadDisableConversion}" Content=".mp4로 변환 사용 안 함(자르기 기능이 사용 불가합니다)" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <CheckBox Grid.Row="10" Grid.Column="2" IsChecked="{Binding CurrentPreferences.DownloadDisableConversion}" Content=".mp4로 변환 사용 안 함(자르기 기능을 사용할 수 없습니다.)" VerticalAlignment="Center" HorizontalAlignment="Left" />
                 <fa:ImageAwesome Grid.Row="10" Grid.Column="4" Style="{StaticResource Img_Help}">
                     <fa:ImageAwesome.ToolTip>
                         <ToolTip  Width="350">

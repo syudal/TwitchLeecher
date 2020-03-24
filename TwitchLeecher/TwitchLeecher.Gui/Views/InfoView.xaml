@@ -44,8 +44,8 @@
 
             <TextBlock Grid.Row="3" Text="프로그램 번역" FontWeight="Bold"  Margin="0,15,0,0" />
             <TextBlock Grid.Row="4" Margin="15,5,0,0">
-            <Hyperlink Command="{Binding OpenLinkCommand}" CommandParameter="https://syudal.tistory.com/">
-                https://syudal.tistory.com/
+            <Hyperlink Command="{Binding OpenLinkCommand}" CommandParameter="https://syudal.tistory.com/category/유틸리티/Twitch%20Leecher">
+                https://syudal.tistory.com/category/유틸리티/Twitch%20Leecher
             </Hyperlink>
             </TextBlock>
 
