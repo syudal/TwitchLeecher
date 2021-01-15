@@ -1,10 +1,10 @@
-using System.Reflection;
+ï»¿using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyProduct("Twitch Leecher")]
-[assembly: AssemblyDescription("Æ®À§Ä¡ ¿µ»ó & Å¬¸³ ´Ù¿î·Î´õ")]
+[assembly: AssemblyDescription("íŠ¸ìœ„ì¹˜ ì˜ìƒ & í´ë¦½ ë‹¤ìš´ë¡œë”")]
 [assembly: AssemblyCompany("Franiac & Syudal")]
-[assembly: AssemblyCopyright("Copyright ?2018 Dominik Rebitzer & Syudal")]
+[assembly: AssemblyCopyright("Copyright Â© 2021 Dominik Rebitzer & Syudal")]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.8.2")]
+[assembly: AssemblyFileVersion("1.8.3")]
 [assembly: ComVisible(false)]
