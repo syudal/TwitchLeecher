@@ -57,12 +57,11 @@ namespace TwitchLeecher.Services.Services
 
         private bool disposedValue = false;
 
-        private IPreferencesService _preferencesService;
-        private IProcessingService _processingService;
-        private IRuntimeDataService _runtimeDataService;
-        private IEventAggregator _eventAggregator;
+        private readonly IPreferencesService _preferencesService;
+        private readonly IProcessingService _processingService;
+        private readonly IEventAggregator _eventAggregator;
 
-        private Timer _downloadTimer;
+        private readonly Timer _downloadTimer;
 
         private ObservableCollection<TwitchVideo> _videos;
         private ObservableCollection<TwitchVideoDownload> _downloads;
@@ -81,12 +80,10 @@ namespace TwitchLeecher.Services.Services
         public TwitchService(
             IPreferencesService preferencesService,
             IProcessingService processingService,
-            IRuntimeDataService runtimeDataService,
             IEventAggregator eventAggregator)
         {
             _preferencesService = preferencesService;
             _processingService = processingService;
-            _runtimeDataService = runtimeDataService;
             _eventAggregator = eventAggregator;
 
             _videos = new ObservableCollection<TwitchVideo>();
@@ -108,14 +105,11 @@ namespace TwitchLeecher.Services.Services
 
         #region Properties
 
-        public ObservableCollection<TwitchVideo> Videos
-        {
-            get
-            {
+        public ObservableCollection<TwitchVideo> Videos {
+            get {
                 return _videos;
             }
-            private set
-            {
+            private set {
                 if (_videos != null)
                 {
                     _videos.CollectionChanged -= Videos_CollectionChanged;
@@ -132,14 +126,11 @@ namespace TwitchLeecher.Services.Services
             }
         }
 
-        public ObservableCollection<TwitchVideoDownload> Downloads
-        {
-            get
-            {
+        public ObservableCollection<TwitchVideoDownload> Downloads {
+            get {
                 return _downloads;
             }
-            private set
-            {
+            private set {
                 if (_downloads != null)
                 {
                     _downloads.CollectionChanged -= Downloads_CollectionChanged;
@@ -248,8 +239,8 @@ namespace TwitchLeecher.Services.Services
             }
         }
 
-        private string CreateGqlPlaybackAccessToken(string id) {
-            /*
+        private string CreateGqlPlaybackAccessToken(string id)
+        {
             // {
             //   "operationName": "PlaybackAccessToken",
             //   "variables": {
@@ -266,7 +257,7 @@ namespace TwitchLeecher.Services.Services
             //     }
             //   }
             // }
-            */
+
             return "{\"operationName\": \"PlaybackAccessToken\",\"variables\": {\"isLive\": false,\"login\": \"\",\"isVod\": true,\"vodID\": \"" + id + "\",\"playerType\": \"channel_home_live\"},\"extensions\": {\"persistedQuery\": {\"version\": 1,\"sha256Hash\": \"0828119ded1c13477966434e15800ff57ddacf13ba1911c129dc2200705b0712\"}}}";
         }
 
@@ -378,7 +369,7 @@ namespace TwitchLeecher.Services.Services
 
             ObservableCollection<TwitchVideo> videos = new ObservableCollection<TwitchVideo>();
 
-            string broadcastTypeParam = null;
+            string broadcastTypeParam;
 
             if (videoType == VideoType.Broadcast)
             {

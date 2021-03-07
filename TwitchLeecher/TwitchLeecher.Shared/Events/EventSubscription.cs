@@ -43,18 +43,14 @@ namespace TwitchLeecher.Shared.Events
 
         #region Properties
 
-        public Action<TPayload> Action
-        {
-            get
-            {
+        public Action<TPayload> Action {
+            get {
                 return (Action<TPayload>)_actionReference.Target;
             }
         }
 
-        public Predicate<TPayload> Filter
-        {
-            get
-            {
+        public Predicate<TPayload> Filter {
+            get {
                 return (Predicate<TPayload>)_filterReference.Target;
             }
         }
@@ -74,11 +70,13 @@ namespace TwitchLeecher.Shared.Events
             {
                 return arguments =>
                 {
-                    TPayload argument = default(TPayload);
+                    TPayload argument = default;
+
                     if (arguments != null && arguments.Length > 0 && arguments[0] != null)
                     {
                         argument = (TPayload)arguments[0];
                     }
+
                     if (filter(argument))
                     {
                         InvokeAction(action, argument);

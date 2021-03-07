@@ -11,7 +11,6 @@ using TwitchLeecher.Core.Models;
 using TwitchLeecher.Gui.Interfaces;
 using TwitchLeecher.Services.Interfaces;
 using TwitchLeecher.Shared.Commands;
-using TwitchLeecher.Shared.Events;
 
 namespace TwitchLeecher.Gui.ViewModels
 {
@@ -22,8 +21,6 @@ namespace TwitchLeecher.Gui.ViewModels
         private readonly ITwitchService _twitchService;
         private readonly IDialogService _dialogService;
         private readonly INavigationService _navigationService;
-        private readonly INotificationService _notificationsService;
-        private readonly IEventAggregator _eventAggregator;
         private readonly IPreferencesService _preferencesService;
         private readonly IFilenameService _filenameService;
 
@@ -41,16 +38,12 @@ namespace TwitchLeecher.Gui.ViewModels
             ITwitchService twitchService,
             IDialogService dialogService,
             INavigationService navigationService,
-            INotificationService notificationService,
-            IEventAggregator eventAggregator,
             IPreferencesService preferencesService,
             IFilenameService filenameService)
         {
             _twitchService = twitchService;
             _dialogService = dialogService;
             _navigationService = navigationService;
-            _notificationsService = notificationService;
-            _eventAggregator = eventAggregator;
             _preferencesService = preferencesService;
             _filenameService = filenameService;
 
@@ -65,18 +58,14 @@ namespace TwitchLeecher.Gui.ViewModels
 
         public double ScrollPosition { get; set; }
 
-        public ObservableCollection<TwitchVideo> Videos
-        {
-            get
-            {
+        public ObservableCollection<TwitchVideo> Videos {
+            get {
                 return _twitchService.Videos;
             }
         }
 
-        public ICommand ViewCommand
-        {
-            get
-            {
+        public ICommand ViewCommand {
+            get {
                 if (_viewCommand == null)
                 {
                     _viewCommand = new DelegateCommand<string>(ViewVideo);
@@ -86,10 +75,8 @@ namespace TwitchLeecher.Gui.ViewModels
             }
         }
 
-        public ICommand DownloadCommand
-        {
-            get
-            {
+        public ICommand DownloadCommand {
+            get {
                 if (_downloadCommand == null)
                 {
                     _downloadCommand = new DelegateCommand<string>(DownloadVideo);
@@ -99,10 +86,8 @@ namespace TwitchLeecher.Gui.ViewModels
             }
         }
 
-        public ICommand SeachCommnad
-        {
-            get
-            {
+        public ICommand SeachCommnad {
+            get {
                 if (_seachCommand == null)
                 {
                     _seachCommand = new DelegateCommand(ShowSearch);
@@ -176,7 +161,7 @@ namespace TwitchLeecher.Gui.ViewModels
 
                             if (!vodAuthInfo.Privileged && vodAuthInfo.SubOnly)
                             {
-                                _dialogService.ShowMessageBox("이 비디오는 구독자 전용입니다! '" + video.Channel + "'에 구독해주세요!", "구독냥이!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                                _dialogService.ShowMessageBox("This video is sub-only! Twitch removed the ability for 3rd party software to download such videos, sorry :(", "SUB HYPE!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
                                 return;
                             }
@@ -227,7 +212,7 @@ namespace TwitchLeecher.Gui.ViewModels
                 menuCommands = new List<MenuCommand>();
             }
 
-            menuCommands.Add(new MenuCommand(SeachCommnad, "검색", "Search"));
+            menuCommands.Add(new MenuCommand(SeachCommnad, "New Search", "Search"));
 
             return menuCommands;
         }
