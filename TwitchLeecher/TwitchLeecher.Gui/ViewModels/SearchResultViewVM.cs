@@ -161,7 +161,7 @@ namespace TwitchLeecher.Gui.ViewModels
 
                             if (!vodAuthInfo.Privileged && vodAuthInfo.SubOnly)
                             {
-                                _dialogService.ShowMessageBox("This video is sub-only! Twitch removed the ability for 3rd party software to download such videos, sorry :(", "SUB HYPE!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                                _dialogService.ShowMessageBox("이 비디오는 구독자 전용입니다." + Environment.NewLine + "안타깝지만, 트위치 리처로는 다운로드 받을 수 없습니다.", "구독냥이!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
                                 return;
                             }
@@ -212,7 +212,7 @@ namespace TwitchLeecher.Gui.ViewModels
                 menuCommands = new List<MenuCommand>();
             }
 
-            menuCommands.Add(new MenuCommand(SeachCommnad, "New Search", "Search"));
+            menuCommands.Add(new MenuCommand(SeachCommnad, "검색", "Search"));
 
             return menuCommands;
         }
